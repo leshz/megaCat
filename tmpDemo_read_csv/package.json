@@ -1,10 +1,12 @@
 {
-  "name": "tmpDemo_read_csv",
+  "name": "tmpDemoReadCsv",
   "version": "1.0.0",
   "description": "Package used: [React component that handles csv file input](https://github.com/nzambello/react-csv-reader)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --open --mode development"
   },
   "keywords": [],
   "author": "Fernando Torres <fertorresmx@gmail.com>",
