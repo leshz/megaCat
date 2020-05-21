@@ -1,17 +1,5 @@
 const { nanoid } = require('nanoid')
-
-const db = {
-  users: [],
-  auths: [],
-  roles: [],
-  permissions: [],
-  medical_records: [],
-  exams_users: [],
-  exams: [],
-  exam_statuses: [],
-  exam_types: [],
-  firebase_notification_tokens: []
-}
+const db = require('./mocks/mockDB')
 
 async function list (table) {
   return db[table]
@@ -36,12 +24,6 @@ async function insert (table, data) {
   const id = data.id || nanoid()
 
   db[table].push({ ...data, id })
-  console.log('/////////////////////////////////////////////')
-  console.log('/////////////////////////////////////////////')
-  console.log(db)
-  console.log('/////////////////////////////////////////////')
-  console.log('/////////////////////////////////////////////')
-
   return { ...db[table].find(item => item.id === id) }
 }
 async function update (table, id, data) {
@@ -54,12 +36,6 @@ async function update (table, id, data) {
   if (itemIndex >= 0) {
     db[table][itemIndex] = { ...db[table][itemIndex], ...data }
   }
-
-  console.log('/////////////////////////////////////////////')
-  console.log('/////////////////////////////////////////////')
-  console.log(db)
-  console.log('/////////////////////////////////////////////')
-  console.log('/////////////////////////////////////////////')
 
   return { ...db[table][itemIndex] }
 }
