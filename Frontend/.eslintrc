@@ -5,7 +5,8 @@
     "node": true
   },
   "extends": [
-    "airbnb"
+    "airbnb",
+    "prettier"
   ],
   "globals": {
     "document": false,
@@ -21,12 +22,21 @@
   },
   "parser": "babel-eslint",
   "plugins": [
+    "prettier",
     "react",
     "jsx-a11y",
     "import"
   ],
   "rules": {
-    "react/jsx-filename-extension": 0,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
     "array-bracket-spacing": 2,
     "arrow-body-style": 0,
     "block-scoped-var": 2,
