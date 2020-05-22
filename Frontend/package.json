@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack --mode production",
     "start": "webpack-dev-server --open --mode development",
-  "format": "prettier --write \"**/*.+(js|jsx|json)\""
+    "format": "prettier --write '{*.js,src/**/*.{js,jsx}}'",
+    "lint": "eslint src/ --fix"
   },
   "repository": {
     "type": "git",
@@ -52,9 +53,10 @@
       "pre-commit": "lint-staged"
     }
   },
-    "lint-staged": {
-    "*.js": [
-      "eslint --cache --fix",
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "npm run format",
+      "npm run lint",
       "git add"
     ]
   }
