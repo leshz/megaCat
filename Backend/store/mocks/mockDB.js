@@ -1,8 +1,9 @@
 const users = require('./UsersMock')
+const auths = require('./AuthMock')
 
 const db = {
   users,
-  auths: [],
+  auths,
   roles: [],
   permissions: [],
   medical_records: [],
