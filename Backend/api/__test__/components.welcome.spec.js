@@ -5,7 +5,7 @@ describe('API | Components | Welcome', () => {
   const request = testServer(route)
   const message = '🔬 Welcome to Exam Management System for Clinical Laboratories API'
   describe('Network', () => {
-    it('should respond with status 200', (done) => {
+    it('should respond with status 201', (done) => {
       request.get('/').expect(200, done)
     })
 

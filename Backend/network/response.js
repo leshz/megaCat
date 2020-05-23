@@ -1,6 +1,6 @@
 exports.success = (req, res, message, status) => {
   const statusCode = status || 200
-  res.status(statusCode).send({
+  res.status(statusCode).json({
     error: false,
     status: statusCode,
     body: message
@@ -8,7 +8,7 @@ exports.success = (req, res, message, status) => {
 }
 
 exports.error = (req, res, error, status = 500) => {
-  res.status(status).send({
+  res.status(status).json({
     error: true,
     status: status,
     body: error
