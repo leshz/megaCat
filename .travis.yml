@@ -14,16 +14,14 @@ git:
   
 jobs:
   include:
-    - stage: test backend
+    - stage: backendtest
     before_script: cd Backend
     script: yarm test 
-    
-
-deploy:
-  provide: heroku
-  skip-cleanup: true
-  keep-history: true
-  api_key: 69ca33c6-3805-4608-9414-fc9362a36b15
-  app: megaCat
-  on:
-    repo: leshz/megaCat
+    deploy:
+      provide: heroku
+      skip-cleanup: true
+      keep-history: true
+      api_key: 69ca33c6-3805-4608-9414-fc9362a36b15
+      app: megaCat
+      on:
+        repo: leshz/megaCat
