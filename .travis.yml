@@ -11,10 +11,11 @@ node_js:
 git:
   depth: 3
 
+  
 jobs:
   include:
-    - stage: "test backend";
-    before_script: cd backend
+    - stage: test backend
+    before_script: cd Backend
     script: yarm test 
     
 
