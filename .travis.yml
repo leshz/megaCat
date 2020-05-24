@@ -15,7 +15,7 @@ jobs:
   include:
     - stage: "test backend";
     before_script: cd backend
-    script: yarm test
+    script: yarm test 
     
 
 deploy:
