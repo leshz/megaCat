@@ -1,0 +1,11 @@
+@import '../App.scss';
+
+.RememberInfo {
+  @include home-themes;
+  .Logo {
+    margin: 0;
+  }
+  &__container--form {
+    
+  }
+}
