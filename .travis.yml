@@ -11,8 +11,12 @@ node_js:
 git:
   depth: 3
 
-script:
-  - yarn test
+jobs:
+  include:
+    - stage: "test backend";
+    before_script: cd backend
+    script: yarm test
+    
 
 deploy:
   provide: heroku
