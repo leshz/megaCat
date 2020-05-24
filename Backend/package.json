@@ -9,7 +9,8 @@
     "start:api": "nodemon api/index.js",
     "test": "jest",
     "test:watch": "jest --watch ",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "build" :"node api/index.js"
   },
   "repository": {
     "type": "git",

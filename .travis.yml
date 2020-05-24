@@ -1,0 +1,24 @@
+language: node_js
+
+cache:
+  directories:
+    - node_modules
+    - ~/.npm
+
+node_js:
+  - '12'
+
+git:
+  depth: 3
+
+script:
+  - yarn test
+
+deploy:
+  provide: heroku
+  skip-cleanup: true
+  keep-history: true
+  api_key: 69ca33c6-3805-4608-9414-fc9362a36b15
+  app: megaCat
+  on:
+    repo: leshz/megaCat
