@@ -16,8 +16,7 @@ jobs:
   include:
     - stage: backendtest
       before_script: cd Backend
-      script: yarn install 
-      script: yarn test 
+      script: yarn install && yarn test 
       deploy:
         provide: heroku
         skip-cleanup: true
