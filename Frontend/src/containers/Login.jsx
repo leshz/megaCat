@@ -6,12 +6,11 @@ import '../assets/styles/containers/Login.scss';
 const Login = () => {
   return (
     <section className="Login">
-      <figure className="Logo">
-        <img
-          src={logo}
-          alt="Logo de Nextep"
-        />
-      </figure>
+      <Link to="/">
+        <figure className="Logo">
+          <img src={logo} alt="Logo de Nextep" />
+        </figure>
+      </Link>
       <div className="Login__container">
         <h1>Bienvenidos a Nextep</h1>
         <form className="Login__container--form">
@@ -37,17 +36,17 @@ const Login = () => {
               <i className="fas fa-lock"></i>
             </span>
           </div>
-          <button className="button--send" type="submit">
+          <Link to="/bacteriologist" className="button--send" type="submit">
             Ingresar
-          </button>
+          </Link>
           <Link to="/remember">¿Has olvidado tu Usuario/Contraseña?</Link>
         </form>
         <div className="Login__container--info">
-        <Link to="/remember">
-          <span>
-            <i className="fas fa-comment-alt"></i>
-          </span>
-        </Link>
+          <Link to="/">
+            <span>
+              <i className="fas fa-comment-alt"></i>
+            </span>
+          </Link>
           <Link to="/">Aviso de privacidad</Link>
         </div>
       </div>

@@ -1,16 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import logo from '../assets/static/logo.png'
 import '../assets/styles/components/RememberInfo.scss'
 
 const RememberInfo = () => {
   return (
     <section className="RememberInfo">
-      <figure className="Logo">
-        <img
-          src={logo}
-          alt="Logo de Nextep"
-        />
-      </figure>
+      <Link to="/">
+        <figure className="Logo">
+          <img src={logo} alt="Logo de Nextep" />
+        </figure>
+      </Link>
       <div className="RememberInfo__container">
         <h1>
           Digite su usuario, se enviará un link a su correo asociado para
