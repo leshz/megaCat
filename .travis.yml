@@ -10,7 +10,6 @@ node_js:
 
 git:
   depth: 3
-
   
 jobs:
   include:
