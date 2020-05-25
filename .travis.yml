@@ -24,8 +24,8 @@ jobs:
         api_key:
           secure: "w/l6OsYnLxjoMSX+VSOuIQz7TIdblvPfAI1s+Ags/wLgsRZJiv2v5TNg/2DdrItnQzv45FfstOKA8iiz4aMpNmdTyXDmHABuY+CA8PeA9YEuhFMDDMXTkZVoj1TtdnhSScPGQUBlvUawUZjp/T1kEHH0kO8QHJD5J1UdkdjNXMh+cojm5kFQqBl/ZthHjobPDUk9mVkRE6lfgSfe8GoqkT05e1c5YIlipk7rffVswS7GGcfr3OB5tNiHaD4r0qto68JqhtPEosoRjahlhfdt41byFgDuuDE+KIqM1Kro3sLU6jLjyoRhgGpmqeVSM0PaP5A09z6umuHNyYmQnUmClYCsEdsztH+hSQJjd6Vhzq7XtzXEfpelatcho2Enk/r6s3xQuUAVnzpm8iqksypNLQftV0zRuXvLMXom4q5+Ua05zw45SiEmkI5ZoajpNuAyjGzjRwEhIZ0LHFQM3TFd8s1qEZq7psZBHGFav45I2sgH1CSVF+/px6eSe2d2h8IZHH8k3Bmf1hoWc+EQ2i6c/O2jTKjAGjoR4NUW2TkObWcm6itpltgvde9FWYFP6p2wlD40zE5/LpIwUM7qPhLRoSdEVww4xvE8kGu8nM5ZeUb2ofYl0Swj/KzMZSi8DbkGo6NhR+TwjB4HXYbZjocN9PkTYwcPhyiDTzptzyd0ivE="
         app: megacat-backend
-        on: deploy-test
-    - stage : fronted deploy
+        on: develop
+    - stage : frontend deploy
       before_script: cd Frontend
       script: yarn install
       deploy:
@@ -36,4 +36,4 @@ jobs:
         api_key:
           secure: "w/l6OsYnLxjoMSX+VSOuIQz7TIdblvPfAI1s+Ags/wLgsRZJiv2v5TNg/2DdrItnQzv45FfstOKA8iiz4aMpNmdTyXDmHABuY+CA8PeA9YEuhFMDDMXTkZVoj1TtdnhSScPGQUBlvUawUZjp/T1kEHH0kO8QHJD5J1UdkdjNXMh+cojm5kFQqBl/ZthHjobPDUk9mVkRE6lfgSfe8GoqkT05e1c5YIlipk7rffVswS7GGcfr3OB5tNiHaD4r0qto68JqhtPEosoRjahlhfdt41byFgDuuDE+KIqM1Kro3sLU6jLjyoRhgGpmqeVSM0PaP5A09z6umuHNyYmQnUmClYCsEdsztH+hSQJjd6Vhzq7XtzXEfpelatcho2Enk/r6s3xQuUAVnzpm8iqksypNLQftV0zRuXvLMXom4q5+Ua05zw45SiEmkI5ZoajpNuAyjGzjRwEhIZ0LHFQM3TFd8s1qEZq7psZBHGFav45I2sgH1CSVF+/px6eSe2d2h8IZHH8k3Bmf1hoWc+EQ2i6c/O2jTKjAGjoR4NUW2TkObWcm6itpltgvde9FWYFP6p2wlD40zE5/LpIwUM7qPhLRoSdEVww4xvE8kGu8nM5ZeUb2ofYl0Swj/KzMZSi8DbkGo6NhR+TwjB4HXYbZjocN9PkTYwcPhyiDTzptzyd0ivE="
         app: nextep-lab
-        on : deploy-test
+        on : develop
