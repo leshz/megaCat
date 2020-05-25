@@ -7,6 +7,7 @@ const config = require('../config.js')
 const errors = require('../network/errors')
 const welcome = require('./components/welcome/network')
 const auth = require('./components/auth/network')
+const examTypes = require('./components/exams/network')
 
 const app = express()
 
@@ -15,6 +16,7 @@ app.use(passport.initialize())
 
 app.use('/', welcome)
 app.use('/api/auth', auth)
+app.use('/api/types', examTypes)
 
 app.use(errors)
 
