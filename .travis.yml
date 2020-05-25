@@ -27,7 +27,8 @@ jobs:
     - stage : fronted deploy
       before_script: cd Frontend
       script: yarn install
-      deploy: heroku
+      deploy:
+        provide: heroku
         skip-cleanup: true
         keep-history: true
         api_key:
