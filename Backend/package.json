@@ -10,7 +10,7 @@
     "test": "jest",
     "test:watch": "jest --watch ",
     "coverage": "jest --coverage",
-    "build" :"node api/index.js"
+    "start" :"node api/index.js"
   },
   "repository": {
     "type": "git",
