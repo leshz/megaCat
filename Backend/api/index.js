@@ -18,6 +18,6 @@ app.use('/api/auth', auth)
 
 app.use(errors)
 
-app.listen(config.api.port, () => {
+app.listen(process.env.PORT || 5000, () => {
   console.log(`🔬API listen on port: http://localhost:${config.api.port}`)
 })
