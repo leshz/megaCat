@@ -11,6 +11,11 @@ node_js:
 git:
   depth: 3
   
+branches:
+  only:
+  - master
+  - develop
+  
 jobs:
   include:
     - stage: backend deploy
