@@ -1,7 +1,6 @@
 import React from 'react';
 import { examTypes } from '../mocks/ExamMock'
 import AddResultsModal from '../components/AddResultsModal'
-// import Bacteriologist from './Bacteriologist';
 import '../assets/styles/containers/AddExams.scss';
 
 class AddExamsResults extends React.Component {
@@ -31,7 +30,9 @@ class AddExamsResults extends React.Component {
         <section className="Add__exam">
           <h1>Agregar resultados a exámenes</h1>
           <div className="Add__exam--name--patient">
-            <h3></h3>
+            <h3>
+              /
+            </h3>
           </div>
           <div className="Add__exam--options">
             <h3>Exámen</h3>
