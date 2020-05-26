@@ -9,7 +9,7 @@ passport.use(new BasicStrategy(async (username, password, cb) => {
   try {
     const user = await authService.get({ username })
 
-    if (!user && !user.is_deleted) {
+    if (!user || !user.isDeleted) {
       return cb(boom.unauthorized(), false)
     }
 
