@@ -38,6 +38,24 @@ button:focus {
     transform: scale(0.9);
   }
 }
+@mixin cardList {
+  margin: .5em 0;
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  justify-items: center;
+  align-items: center;
+  border: 1px solid #efefef;
+  border-radius: 15px;
+  transition: all .3s;
+  &:hover {
+    background: #f5f5f5;
+  }
+}
+
+@mixin cardIcon {
+  color: #19243B;
+  cursor: pointer;
+}
 
 .Container {
   max-width: 85%;

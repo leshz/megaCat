@@ -1,0 +1,29 @@
+@import '../App.scss';
+
+.Add__exam {
+  h1 {
+    color: #FF5C00;
+    text-align: center;
+  }
+}
+
+.Add__exam--options {
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  justify-items: center;
+  border-bottom: 2px solid #A1A1A1;
+}
+
+.Add__exam--list--cards {
+  margin: 0;
+  padding: 1.5em 0 0 0;
+}
+
+.Exam__card {
+  @include cardList;
+  .Exam__watch--icon {
+    @include cardIcon;
+    background: 0;
+    border: none;
+  }
+}
