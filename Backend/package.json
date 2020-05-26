@@ -31,7 +31,8 @@
     "eslint-plugin-standard": "^4.0.1",
     "husky": "^4.2.5",
     "nodemon": "^2.0.4",
-    "standard": "^14.3.4"
+    "standard": "^14.3.4",
+    "jest": "^26.0.1"
   },
   "dependencies": {
     "@hapi/boom": "^9.1.0",
@@ -40,7 +41,7 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "jest": "^26.0.1",
+    "firebase-admin": "^8.12.1",
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.21.1",
     "nanoid": "^3.1.9",

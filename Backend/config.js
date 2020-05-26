@@ -15,5 +15,9 @@ module.exports = {
     port: process.env.KNEX_PORT || '',
     client: process.env.KNEX_CLIENT || ''
   },
-  dbMotor: process.env.DB_MOTOR || 'dummy'
+  dbMotor: process.env.DB_MOTOR || 'dummy',
+  fbase: {
+    name: process.env.FB_APP_NAME || '',
+    cert: process.env.FB_CERT || {}
+  }
 }
