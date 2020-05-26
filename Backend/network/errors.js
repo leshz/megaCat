@@ -12,7 +12,7 @@ function errors (err, req, res, next) {
     statusCode = err.statusCode || statusCode
   }
 
-  response.error(req, res, message, statusCode)
+  return response.error(req, res, message, statusCode)
 }
 
 module.exports = errors
