@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/static/logo.png'
+import logo from '../assets/static/logo.png';
 import '../assets/styles/containers/Login.scss';
 
 const Login = () => {
@@ -47,7 +47,7 @@ const Login = () => {
               <i className="fas fa-comment-alt"></i>
             </span>
           </Link>
-          <Link to="/">Aviso de privacidad</Link>
+          <Link to="/_header" className="button--send" type="submit">Aviso de privacidad</Link>
         </div>
       </div>
     </section>
