@@ -4,7 +4,7 @@ function errors (err, req, res, next) {
   const {
     message = 'Internal error',
     statusCode = 500
-  } = err.output.payload
+  } = err
   response.error(req, res, message, statusCode)
 }
 
