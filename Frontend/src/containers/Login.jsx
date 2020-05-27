@@ -42,12 +42,12 @@ const Login = () => {
           <Link to="/remember">¿Has olvidado tu Usuario/Contraseña?</Link>
         </form>
         <div className="Login__container--info">
-          <Link to="/">
+          <Link to="/administrator">
             <span>
               <i className="fas fa-comment-alt"></i>
             </span>
           </Link>
-          <Link to="/_header" className="button--send" type="submit">Aviso de privacidad</Link>
+          <Link to="/header" className="button--send" type="submit">Aviso de privacidad</Link>
         </div>
       </div>
     </section>
