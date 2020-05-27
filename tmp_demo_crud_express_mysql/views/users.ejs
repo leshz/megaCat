@@ -1,0 +1,79 @@
+<%- include ('partials/_header.ejs'); -%>
+
+<!--<pre><%= data.length %></pre>-->
+
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-7">
+      <table class="table">
+        <thead>
+          <tr class="table-dark">
+            <th>Nº</th>
+            <th>Name</th>
+            <th>Adrress</th>
+            <th>Phone</th>
+            <th>action</th>
+          </tr>
+        </thead>
+        <tbody class="table-hover">
+          <% if(data) { %> <% for (var i = 0; i < data.length; i++) { %>
+          <tr class="table-active table-success">
+            <td><%= (i + 1) %></td>
+            <td><%= data[i].username %></td>
+            <td><%= data[i].email %></td>
+            <td><%= data[i].password %></td>
+            <td>
+              <a href="/delete/<%= data[i].id %>" class="btn btn-outline-danger"
+                >DELETE</a
+              >
+              <a href="/update/<%= data[i].id %>" class="btn btn-outline-warning"
+                >UPDATE</a
+              >
+            </td>
+          </tr>
+          <% } %> <% } %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-5">
+      <div class="card">
+        <div class="card-body">
+          <form action="/add" method="POST">
+            <div class="form-group">
+              <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                class="form-control"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                name="address"
+                placeholder="Adrress"
+                class="form-control"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                name="phone"
+                placeholder="Phone"
+                class="form-control"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">
+              Save Customer
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include ('partials/_footer.ejs'); -%>
