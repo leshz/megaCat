@@ -5,6 +5,8 @@
 ## Description
 
 This is a **WIP (Work in progress)** personal project for test NodeJS, Express, MySQL, and CRUD operations.
+It uses express to load a simple page with the results from a query on a MySQL table.
+**More actions to be define later**
 
 ### Technology used
 
@@ -82,6 +84,7 @@ Review your console
 #### Follow me
 
 [fertorresmx.dev](http://fertorresmx.dev/)
+
 [fertorresmx.com](http://fertorresmx.com/)
 
 #### :globe_with_meridians: Twitter, Instagram: @fertorresmx

@@ -1,7 +1,7 @@
 {
   "name": "demo_crud_express_mysql",
   "version": "1.0.1",
-  "description": "",
+  "description": "This is a WIP (Work in progress) personal project for test NodeJS, Express, MySQL, and CRUD operations. It uses express to load a simple page with the results from a query on a MySQL table",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
