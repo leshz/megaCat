@@ -6,7 +6,7 @@ const auths = [
     username: 'leodora.crouch.1767',
     password: '$2b$10$ZpVyOQe2bRJFYC3NujyBg.CyRcytVp.d6UmNYJ/A7CN9jacsRJ05G',
     role_id: rolesEnum.ADMINISTRATOR.id,
-    is_deleted: false,
+    isDeleted: false,
     created_at: '2020-01-22 14:00:18',
     updated_at: '2020-02-27 20:11:39'
   },
@@ -16,7 +16,7 @@ const auths = [
     username: 'hayden.haseman.3469',
     password: '$2b$10$ZpVyOQe2bRJFYC3NujyBg.CyRcytVp.d6UmNYJ/A7CN9jacsRJ05G',
     role_id: rolesEnum.MEDIC.id,
-    is_deleted: false,
+    isDeleted: false,
     created_at: '2020-02-03 08:45:34',
     updated_at: '2019-12-31 18:44:32'
   },
@@ -26,7 +26,7 @@ const auths = [
     username: 'basile.matteini.5582',
     password: '$2b$10$ZpVyOQe2bRJFYC3NujyBg.CyRcytVp.d6UmNYJ/A7CN9jacsRJ05G',
     role_id: rolesEnum.BACTERIOLOGIST.id,
-    is_deleted: true,
+    isDeleted: true,
     created_at: '2019-10-10 02:05:12',
     updated_at: '2020-02-03 00:16:37'
   },
@@ -36,7 +36,7 @@ const auths = [
     username: 'hersh.oloman.3123',
     password: '$2b$10$ZpVyOQe2bRJFYC3NujyBg.CyRcytVp.d6UmNYJ/A7CN9jacsRJ05G',
     role_id: rolesEnum.PACIENT.id,
-    is_deleted: false,
+    isDeleted: false,
     created_at: '2019-10-18 22:22:15',
     updated_at: '2019-10-27 06:28:39'
   },
@@ -46,7 +46,7 @@ const auths = [
     username: 'ursula.cowen.1011',
     password: '$2b$10$ZpVyOQe2bRJFYC3NujyBg.CyRcytVp.d6UmNYJ/A7CN9jacsRJ05G',
     role_id: rolesEnum.ADMINISTRATOR.id,
-    is_deleted: true,
+    isDeleted: true,
     created_at: '2019-05-23 01:10:13',
     updated_at: '2019-11-11 16:03:54'
   },
@@ -56,7 +56,7 @@ const auths = [
     username: 'norry.vockins.7897',
     password: '$2b$10$ZpVyOQe2bRJFYC3NujyBg.CyRcytVp.d6UmNYJ/A7CN9jacsRJ05G',
     role_id: rolesEnum.MEDIC.id,
-    is_deleted: false,
+    isDeleted: false,
     created_at: '2020-02-02 06:11:16',
     updated_at: '2019-08-20 00:41:38'
   },
@@ -66,7 +66,7 @@ const auths = [
     username: 'hort.mantram.5839',
     password: '$2b$10$ZpVyOQe2bRJFYC3NujyBg.CyRcytVp.d6UmNYJ/A7CN9jacsRJ05G',
     role_id: rolesEnum.BACTERIOLOGIST.id,
-    is_deleted: true,
+    isDeleted: true,
     created_at: '2019-10-12 12:44:17',
     updated_at: '2020-04-14 12:24:05'
   },
@@ -76,7 +76,7 @@ const auths = [
     username: 'christie.baelde.6214',
     password: '$2b$10$ZpVyOQe2bRJFYC3NujyBg.CyRcytVp.d6UmNYJ/A7CN9jacsRJ05G',
     role_id: rolesEnum.PACIENT.id,
-    is_deleted: false,
+    isDeleted: false,
     created_at: '2019-12-08 08:22:59',
     updated_at: '2020-05-12 06:13:23'
   },
@@ -86,7 +86,7 @@ const auths = [
     username: 'byram.doblin.1325',
     password: '$2b$10$ZpVyOQe2bRJFYC3NujyBg.CyRcytVp.d6UmNYJ/A7CN9jacsRJ05G',
     role_id: rolesEnum.PACIENT.id,
-    is_deleted: true,
+    isDeleted: true,
     created_at: '2020-01-02 01:26:33',
     updated_at: '2020-02-27 09:26:02'
   },
@@ -96,7 +96,7 @@ const auths = [
     username: 'dniren.pidwell.1382',
     password: '$2b$10$ZpVyOQe2bRJFYC3NujyBg.CyRcytVp.d6UmNYJ/A7CN9jacsRJ05G',
     role_id: rolesEnum.PACIENT.id,
-    is_deleted: false,
+    isDeleted: false,
     created_at: '2019-09-16 09:43:44',
     updated_at: '2019-06-21 00:51:37'
   }

@@ -3,7 +3,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const passport = require('passport')
 
-const config = require('../config.js')
+const config = require('../config/config')
 const errors = require('../network/errors')
 const welcome = require('./components/welcome/network')
 const auth = require('./components/auth/network')
@@ -22,6 +22,6 @@ app.use('/notification', notification)
 
 app.use(errors)
 
-app.listen(process.env.PORT || 5000, () => {
+app.listen(config.api.port || 5000, () => {
   console.log(`🔬API listen on port: http://localhost:${config.api.port}`)
 })

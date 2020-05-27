@@ -9,7 +9,7 @@
     "contact_number": "715-982-0519",
     "address": "26 Quincy Pass",
     "medical_record": "03254d70-723b-4bed-8adb-477dffe8f092",
-    "is_deleted": false,
+    "isDeleted": false,
     "created_at": "2020-01-22 14:00:18",
     "updated_at": "2020-02-27 20:11:39"
   },
@@ -23,7 +23,7 @@
     "contact_number": "552-913-5574",
     "address": "5761 Melvin Drive",
     "medical_record": "088b8665-d176-4021-9416-ac787339c568",
-    "is_deleted": false,
+    "isDeleted": false,
     "created_at": "2020-02-03 08:45:34",
     "updated_at": "2019-12-31 18:44:32"
   },
@@ -37,7 +37,7 @@
     "contact_number": "978-756-5028",
     "address": "939 7th Place",
     "medical_record": "56021793-eed0-44c1-b2ab-72b245f1bb17",
-    "is_deleted": true,
+    "isDeleted": true,
     "created_at": "2019-10-10 02:05:12",
     "updated_at": "2020-02-03 00:16:37"
   },
@@ -51,7 +51,7 @@
     "contact_number": "746-918-2444",
     "address": "05898 Southridge Alley",
     "medical_record": "5823cf51-b27c-4cec-a0ac-c42b249ddc7c",
-    "is_deleted": false,
+    "isDeleted": false,
     "created_at": "2019-10-18 22:22:15",
     "updated_at": "2019-10-27 06:28:39"
   },
@@ -65,7 +65,7 @@
     "contact_number": "376-721-4543",
     "address": "1 Amoth Place",
     "medical_record": "bb881424-e27e-4c27-be49-843b7febd7e7",
-    "is_deleted": true,
+    "isDeleted": true,
     "created_at": "2019-05-23 01:10:13",
     "updated_at": "2019-11-11 16:03:54"
   },
@@ -79,7 +79,7 @@
     "contact_number": "148-183-3666",
     "address": "084 Hoard Terrace",
     "medical_record": "635fb5b6-1eae-4c51-9b84-971b238d75fe",
-    "is_deleted": false,
+    "isDeleted": false,
     "created_at": "2020-02-02 06:11:16",
     "updated_at": "2019-08-20 00:41:38"
   },
@@ -93,7 +93,7 @@
     "contact_number": "273-256-7690",
     "address": "8791 Twin Pines Avenue",
     "medical_record": "a7dd94eb-f2e6-411f-baa7-60761c03ccb3",
-    "is_deleted": true,
+    "isDeleted": true,
     "created_at": "2019-10-12 12:44:17",
     "updated_at": "2020-04-14 12:24:05"
   },
@@ -107,7 +107,7 @@
     "contact_number": "715-754-7698",
     "address": "246 Delaware Avenue",
     "medical_record": "672f2993-4366-4b16-9aec-f12830494d33",
-    "is_deleted": false,
+    "isDeleted": false,
     "created_at": "2019-12-08 08:22:59",
     "updated_at": "2020-05-12 06:13:23"
   },
@@ -121,7 +121,7 @@
     "contact_number": "148-633-0195",
     "address": "44 Kinsman Alley",
     "medical_record": "527d5cc2-0eb0-484d-9756-90a99feb650d",
-    "is_deleted": true,
+    "isDeleted": true,
     "created_at": "2020-01-02 01:26:33",
     "updated_at": "2020-02-27 09:26:02"
   },
@@ -135,7 +135,7 @@
     "contact_number": "311-548-0007",
     "address": "39 Meadow Ridge Alley",
     "medical_record": "da16d247-a252-4abc-9692-82167f84c9e2",
-    "is_deleted": false,
+    "isDeleted": false,
     "created_at": "2019-09-16 09:43:44",
     "updated_at": "2019-06-21 00:51:37"
   }
