@@ -1,7 +1,11 @@
 import React from 'react';
+
 import '../assets/styles/containers/_administrator.scss';
 import Header from '../components/Header';
+import User from '../components/User';
+import UserItem from '../components/UserItem';
 import csvIcon from '../assets/static/csv-file.png';
+
 // import '../containers/Pagination'
 const Administrator = () => (
   <div>
@@ -68,7 +72,12 @@ const Administrator = () => (
       <button className='button-csv' type='button'>
         Importar archivo .csv
       </button>
+
       {/* zona de la lista de registros */}
+      <User>
+        <UserItem />
+      </User>
+
       <div className='cardContainer'>
         {/* <input type='checkbox' id='cbox1' value='checkbox'>  */}
         <i className='fas fa-eye' />
