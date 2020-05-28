@@ -6,26 +6,26 @@ import '../assets/styles/containers/_header.scss';
 
 const Header = () => {
     return (
-    <Fragment>
-        <div className="main-container">
+    <>
+        <main>
             <figure className="imagotipo">
-                <img className="iconotipo" src={iconotipo} alt="Iconotipo de Nextep" />
-                <img className="logotipo" src={logotipo} />      
+                <img className="imagotipo__iconotipo" src={iconotipo} alt="Iconotipo de Nextep" />
+                <img className="imagotipo__logotipo" src={logotipo} />      
             </figure>  
-            <span className="tittle-container">
-                <h1 className="tittle">Mis Resultados de Laboratorio</h1>
+            <span className="tittle">
+                <h1>Mis Resultados de Laboratorio</h1>
             </span> 
-            <span className="user-container">
-                <a href="usersesion"><img className="user-icon" src={usericon} alt="User"/></a>
-            </span>      
+            <figure className="user-container">
+                <a href="userSesion"><img className="userIcon" src={usericon} alt="User"/></a>
+            </figure>      
             <span>
                 <p className="patient-indication">Panel del paciente</p>
             </span>   
-            <span className="namebar">
-            <p>Name user/ ID Code</p>
-            </span>  
-        </div>
-    </Fragment>
+            <figure className="namebar">
+                <p>Name user/ ID Code</p>
+            </figure>  
+        </main>
+    </>
     );
 };
 

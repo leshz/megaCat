@@ -1,64 +1,55 @@
+$fuente-principal: 'Quicksand', sans-serif;
+$background-color: linear-gradient(to left bottom, #1b2470 50%, #293585 50%);
+$color-font:#FFB015;
+$color-box: #FF5C00;
+
 body {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Quicksand', sans-serif;
+    font-family: $fuente-principal;
 }
 
-.main-container {
+main {
     margin-block-start: 0em;
     display: grid;
     grid-template-columns: 350px 600px 1fr;
     grid-row: 2fr 2fr;
-    width: 100vw;
-    height: 120px;
-    padding-top: 10px; ;
 }
 
-.main-container{
-    background: linear-gradient(to left bottom, #1b2470 50%, #293585 50%);
+main {
+    width: 100vw;
+    height: 120px;
+    padding-top: 10px; 
+    background: $background-color;
 }
 
 .imagotipo {
     margin: 0;
     width: 260px;
-    // margin-top: 20px;
     height: 75px;
+    &__iconotipo {
+        width: 100px;
+        margin-left: 20px;
+    }
+    &__logotipo{
+        width: 140px;
+        margin-bottom: 5px;
+    }
 }
 
-.iconotipo {
-    width: 100px;
-    margin-left: 20px;
-}
 
-.logotipo {
-    width: 140px;
-    margin-bottom: 5px;
-}
-
-.frame {
-    background-color: #16182b;
-    width: 60px;
-    height: 200px;
-    margin-top: 500px;
-}
-
-.tittle-container{
+.tittle {
     display: grid;
     justify-self: center;
     width: 500px;
     height: 75px;
-    // margin-top: 5px;
-}
-
-.tittle {
-    width: 470px;
-    color: #FFB015;
-}
-
-.tittle {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
+    h1 {
+        width: 470px;
+        color: $color-font;
+        font-family: $fuente-principal;
+        font-weight: 600;
+    }
 }
 
 .user-container {
@@ -68,41 +59,46 @@ body {
     margin-right: 40px;
 }
 
-.user-icon {
-    width: 40px;
+.userIcon {
     display: grid;
     align-items: end;
+    padding-right: 50px;
+    width: 40px;
 }
 
 .patient-indication {
     font-family: 'Quicksand', sans-serif;
     font-weight: 600;
     font-size: medium;
+    color: $color-font;
+}
+
+.patient-indication {
     margin-top: 10px;
     margin-left: 25px;
     justify-content: center;
-    color: #FFB015;
 }
 
 .namebar {
-    background: #FF5C00;
+    background: $color-box;
     display: grid;
     grid-column: 3;
     width: 400px;
     height: 30px;
     margin-top: 25px;
-    border: 4px solid red($color: #000000);
+    border: 4px solid red;
     box-sizing: border-box;
     border-radius: 30px;
+    p { 
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        margin: 0;
+        color: white;
+        font-weight: 600;
+    }
 }
 
-.namebar p { 
-    color: white;
-    font-weight: 600;
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    margin: 0;
-}
+
 
 
