@@ -1,23 +1,18 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import '../assets/styles/containers/_administrator.scss';
 import Header from '../components/Header';
 import User from '../components/User';
 import UserItem from '../components/UserItem';
 import csvIcon from '../assets/static/csv-file.png';
+import useInitialState from '../hooks/useInitialState';
 
 // import '../containers/Pagination'
-const Administrator = () => {
-  const [listUsers, setUsers] = useState({
-    users: [],
-  });
+const API = 'http://localhost:3000/initialState/';
 
-  useEffect(() => {
-    fetch('http://localhost:3000/initialState')
-      .then((response) => response.json())
-      .then((data) => setUsers(data));
-  }, []);
+const Administrator = () => {
+  const initialState = useInitialState(API);
 
   return (
     <div>
@@ -87,7 +82,7 @@ const Administrator = () => {
 
         {/* zona de la lista de registros */}
         <User>
-          {listUsers.users.map((item) => (
+          {initialState.users.map((item) => (
             <UserItem key={item.id} {...item} />
           ))}
         </User>
