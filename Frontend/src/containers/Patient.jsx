@@ -3,15 +3,14 @@ import React from 'react';
 
 import '../assets/styles/containers/_administrator.scss';
 import Header from '../components/Header';
-import User from './User';
-import UserItem from '../components/UserItem';
-import csvIcon from '../assets/static/csv-file.png';
+import Exam from './Exam';
+import ExamItem from '../components/ExamItem';
 import useInitialState from '../hooks/useInitialState';
 
 // import '../containers/Pagination'
 const API = 'http://localhost:3000/initialState/';
 
-const Administrator = () => {
+const Patient = () => {
   const initialState = useInitialState(API);
 
   return (
@@ -63,7 +62,6 @@ const Administrator = () => {
 
         <span className='pagination'>
           {/* El cógigo de Paginación funciona y esta importado, llarmarlo*/}
-          <p className='addUser'>Agregar nuevo usuario</p>
           <i className='fas fa-plus-circle' />
         </span>
         {/* <script>
@@ -73,19 +71,13 @@ const Administrator = () => {
               para indicar que tipo de listas se muestran pero si no es algo sencillo lo quitamos
             </script>
         */}
-        <div className='csvIcon'>
-          <img src={csvIcon} alt='CSVIcon' />
-        </div>
-        <button className='button-csv' type='button'>
-          Importar archivo .csv
-        </button>
 
         {/* zona de la lista de registros */}
-        <User>
-          {initialState.users.map((item) => (
-            <UserItem key={item.id} {...item} />
+        <Exam>
+          {initialState.exams.map((item) => (
+            <ExamItem key={item.id} {...item} />
           ))}
-        </User>
+        </Exam>
 
         <div className='cardContainer'>
           {/* <input type='checkbox' id='cbox1' value='checkbox'>  */}
@@ -98,4 +90,4 @@ const Administrator = () => {
   );
 };
 
-export default Administrator;
+export default Patient;
