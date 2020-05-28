@@ -36,7 +36,7 @@ const Login = () => {
               <i className="fas fa-lock"></i>
             </span>
           </div>
-          <Link to="/bacteriologist" className="button--send" type="submit">
+          <Link to="/doctor" className="button--send" type="submit">
             Ingresar
           </Link>
           <Link to="/remember">¿Has olvidado tu Usuario/Contraseña?</Link>

@@ -1,7 +1,7 @@
 import React from 'react';
-import usersMock from '../mocks/UsersMock.json';
-import '../assets/styles/containers/Bacteriologist.scss';
 import { Link } from 'react-router-dom';
+import usersMock from '../mocks/UsersMock.json';
+import '../assets/styles/containers/PatientList.scss';
 
 class Bacteriologist extends React.Component {
   state = {
