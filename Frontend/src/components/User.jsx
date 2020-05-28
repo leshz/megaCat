@@ -5,12 +5,17 @@ const User = ({ children }) => (
     <table className='tabla'>
       <thead>
         <tr>
+          <th>Id</th>
           <th>Nombre</th>
           <th>Apellido</th>
           <th>Username</th>
           <th>Email</th>
-          <th>Tel</th>
-          <th>address</th>
+          <th>Teléfono</th>
+          <th>Domicilio</th>
+          <th>Registro Médico</th>
+          <th>Borrado?</th>
+          <th>Fecha creación</th>
+          <th>Fecha actualización</th>
         </tr>
       </thead>
       <tbody>{children}</tbody>
