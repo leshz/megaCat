@@ -5,49 +5,51 @@ import '../assets/styles/containers/Login.scss';
 
 const Login = () => {
   return (
-    <section className="Login">
-      <Link to="/">
-        <figure className="Logo">
-          <img src={logo} alt="Logo de Nextep" />
+    <section className='Login'>
+      <Link to='/'>
+        <figure className='Logo'>
+          <img src={logo} alt='Logo de Nextep' />
         </figure>
       </Link>
-      <div className="Login__container">
+      <div className='Login__container'>
         <h1>Bienvenidos a Nextep</h1>
-        <form className="Login__container--form">
-          <div className="Login__container--form--options">
+        <form className='Login__container--form'>
+          <div className='Login__container--form--options'>
             <input
-              name="email"
-              className="input"
-              type="text"
-              placeholder="Usuario"
+              name='email'
+              className='input'
+              type='text'
+              placeholder='Usuario'
             />
             <span>
-              <i className="fas fa-user"></i>
+              <i className='fas fa-user' />
             </span>
           </div>
-          <div className="Login__container--form--options">
+          <div className='Login__container--form--options'>
             <input
-              name="password"
-              className="input"
-              type="password"
-              placeholder="Contraseña"
+              name='password'
+              className='input'
+              type='password'
+              placeholder='Contraseña'
             />
             <span>
-              <i className="fas fa-lock"></i>
+              <i className='fas fa-lock' />
             </span>
           </div>
-          <Link to="/bacteriologist" className="button--send" type="submit">
+          <Link to='/administrator' className='button--send' type='submit'>
             Ingresar
           </Link>
-          <Link to="/remember">¿Has olvidado tu Usuario/Contraseña?</Link>
+          <Link to='/remember'>¿Has olvidado tu Usuario/Contraseña?</Link>
         </form>
-        <div className="Login__container--info">
-          <Link to="/administrator">
+        <div className='Login__container--info'>
+          <Link to='/administrator'>
             <span>
-              <i className="fas fa-comment-alt"></i>
+              <i className='fas fa-comment-alt' />
             </span>
           </Link>
-          <Link to="/header" className="button--send" type="submit">Aviso de privacidad</Link>
+          <Link to='/header' className='button--send' type='submit'>
+            Aviso de privacidad
+          </Link>
         </div>
       </div>
     </section>
