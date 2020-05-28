@@ -35,7 +35,7 @@ class Doctor extends React.Component {
           <div className="Patient__list--options">
             <h3>No. Identificación</h3>
             <h3>Nombres y Apellidos</h3>
-            <h3>Ver registro</h3>
+            <h3>Ver registro de paciente</h3>
           </div>
           <ul className="Patient__list--cards">
             {filteredUsersMock.map((item) => {
