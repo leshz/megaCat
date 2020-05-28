@@ -1,4 +1,4 @@
-const config = require('../../../config.js')
+const config = require('../../../config/config')
 const admin = require('firebase-admin')
 const FB_APP_NAME = config.fbase.name
 const FB_CERT = config.fbase.cert
@@ -9,14 +9,21 @@ const appFirebase = admin.initializeApp({
 })
 
 const sendMessageMulticast = (informaton) => {
-  const { title, body, token } = informaton
-  const notification = { notification: { title, body }, token }
-  return appFirebase.messaging(notification)
-    .send()
-    .then(e => e)
-    .catch(err => {
-      console.log(err.message)
-    })
+  return new Promise((resolve, reject) => {
+    const { token, message, title } = informaton
+    const notification = {
+      token: token,
+      data: {
+        title: title,
+        body: message
+      }
+    }
+    appFirebase
+      .messaging()
+      .send(notification)
+      .then((e) => resolve(e))
+      .catch((err) => reject(err))
+  })
 }
 
 module.exports = { sendMessageMulticast }

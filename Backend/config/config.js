@@ -24,6 +24,10 @@ module.exports = {
     port: process.env.KNEX_PORT || '',
     client: process.env.KNEX_CLIENT || ''
   },
+  fbase: {
+    name: process.env.FB_APP_NAME || '',
+    cert: process.env.FB_CERT || {}
+  },
   dbMotor: process.env.DB_MOTOR || 'dummy',
   sequelize: {
     development: {
