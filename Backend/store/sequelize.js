@@ -72,11 +72,16 @@ async function query (model, where, paginationConfig = null, include = null) {
   })
 }
 
+function model (model) {
+  return store[model]
+}
+
 module.exports = {
   list,
   get,
   insert,
   update,
   remove,
-  query
+  query,
+  model
 }
