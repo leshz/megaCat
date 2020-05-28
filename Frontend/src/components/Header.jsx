@@ -8,7 +8,7 @@ const Header = () => (
   <header className='header'>
     <div className='main-container'>
       <figure className='imagotipo'>
-        <img className='iconotipo' src={iconType} alt='Iconotipo de Nextep' />
+        <img className='iconotipo' src={iconType} alt='Iconotipo de Netxtep' />
         <img className='logotipo' src={logo} alt='logotipo' />
       </figure>
       <span className='tittle-container'>
@@ -20,7 +20,7 @@ const Header = () => (
         </a>
       </span>
       <span>
-        <p className='patient-indication'>Panel del paciente</p>
+        <p className='patient-indication'>Panel del Paciente</p>
       </span>
       <span className='namebar'>
         <p>Name user/ ID Code</p>

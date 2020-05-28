@@ -24,6 +24,13 @@ cd my_folder
 npm install
 ```
 
+### Start fake API
+Start the json server to simulate an API for this project.
+```
+json-server initialState.json
+```
+You can see the data [here](http://localhost:3000/initialState)
+
 ### Execute
 
 Now, open a new terminal, in the same folder, and execute with

@@ -4,10 +4,11 @@
   "description": "Sistema Gestor de Exámenes para Laboratorios Clínicos",
   "main": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --open --mode development",
     "format": "prettier --write '{*.js,src/**/*.{js,jsx}}'",
-    "lint": "eslint src/ --fix"
+    "lint": "eslint --fix",
+    "start": "webpack-dev-server --open --mode development"
   },
   "repository": {
     "type": "git",
@@ -15,7 +16,9 @@
   },
   "author": "Fernando Torres <fertorresmx@gmail.com>",
   "license": "MIT",
-  "url": "https://github.com/FernandoTorresL/megaCat/issues",
+  "bugs": {
+    "url": "https://github.com/FernandoTorresL/megaCat/issues"
+  },
   "homepage": "https://github.com/FernandoTorresL/megaCat#readme",
   "dependencies": {
     "babel-eslint": "^10.1.0",

@@ -1,10 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
 import Login from '../containers/Login';
 import RememberInfo from '../components/RememberInfo';
 import Bacteriologist from '../containers/Bacteriologist';
 import Header from '../components/Header';
 import Administrator from '../containers/Administrator';
+
 import '../assets/styles/App.scss';
 
 const App = () => {
