@@ -2,17 +2,18 @@
 import { useState, useEffect } from 'react';
 
 const useInitialState = (API) => {
-  const [listUsers, setUsers] = useState({
+  const [dataInfo, setDataInfo] = useState({
     users: [],
+    exams: [],
   });
 
   useEffect(() => {
     fetch(API)
       .then((response) => response.json())
-      .then((data) => setUsers(data));
+      .then((data) => setDataInfo(data));
   }, []);
-  console.log(listUsers);
-  return listUsers;
+  console.log(dataInfo);
+  return dataInfo;
 };
 
 export default useInitialState;

@@ -6,6 +6,7 @@ import RememberInfo from '../components/RememberInfo';
 import Bacteriologist from '../containers/Bacteriologist';
 import Header from '../components/Header';
 import Administrator from '../containers/Administrator';
+import Patient from '../containers/Patient';
 
 import '../assets/styles/App.scss';
 
@@ -18,6 +19,7 @@ const App = () => {
         <Route exact path='/bacteriologist' component={Bacteriologist} />
         <Route exact path='/header' component={Header} />
         <Route exact path='/administrator' component={Administrator} />
+        <Route exact path='/patient' component={Patient} />
       </Switch>
     </BrowserRouter>
   );

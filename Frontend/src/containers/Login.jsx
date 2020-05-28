@@ -38,7 +38,10 @@ const Login = () => {
             </span>
           </div>
           <Link to='/administrator' className='button--send' type='submit'>
-            Ingresar
+            Ingresar como admin
+          </Link>
+          <Link to='/patient' className='button--send' type='submit'>
+            Ingresar como paciente
           </Link>
           <Link to='/remember'>¿Has olvidado tu Usuario/Contraseña?</Link>
         </form>
