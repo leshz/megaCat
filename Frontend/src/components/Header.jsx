@@ -1,4 +1,5 @@
 import React from 'react';
+
 import iconType from '../assets/static/iconotipo.png';
 import logo from '../assets/static/logotipo.png';
 import userIcon from '../assets/static/circle-regular.png';
