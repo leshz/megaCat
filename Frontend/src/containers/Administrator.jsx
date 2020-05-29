@@ -92,7 +92,7 @@ const Administrator = ({ users, titleAdmin }) => {
   );
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     users: state.users,
     titleAdmin: state.titleAdmin,
