@@ -8,24 +8,29 @@ import App from './routes/App';
 const initialState = {
   'titles': [
     {
-      'titleAdmin': 'Panel del Administrador',
+      'name': 'Panel del Administrador',
+      'titlePatient': 'Panel del Paciente',
+    },
+    {
+      'name': 'Panel del Administrador',
       'titlePatient': 'Panel del Paciente',
     }
   ],
   'users': [
     {
-      'id': '018a5472-bf8e-4889-a3a2-ebdd4722d6b2',
-      'idNumber': 1767,
-      'firstName': 'Leodora',
-      'lastName': 'Crouch',
-      'username': 'leodora.crouch.1767',
-      'email': 'lcrouch0@wix.com',
-      'contactNumber': '715-982-0519',
-      'address': '26 Quincy Pass',
+      'id': '97588236-ft73-1234-c4n5-ebdd2689h4j7',
+      'idNumber': 5252,
+      'firstName': 'Fernando',
+      'lastName': 'Torres',
+      'username': 'fernando.torres.5252',
+      'email': 'fertorresmx@gmail.com',
+      'contactNumber': '55 1234 5678',
+      'address': 'Toledo 21, Juárez, CDMX',
       'medicalRecord': '03254d70-723b-4bed-8adb-477dffe8f092',
       'isDeleted': false,
-      'createdAt': '2020-01-22 14:00:18',
-      'updatedAt': '2020-02-27 20:11:39'
+      'roleId': 'd436e99b-afea-44cf-a31c-ff35b7740c67',
+      'createdAt': '2020-01-16 13:05:18',
+      'updatedAt': '2020-02-17 19:16:39'
     },
     {
       'id': '832b0c00-7b1e-4a4d-8c0d-39bdfb40f05c',

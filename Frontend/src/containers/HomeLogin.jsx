@@ -1,10 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { loginRequest } from '../actions';
 
 import logo from '../assets/static/logo.png';
 import '../assets/styles/containers/Login.scss';
 
-const Login = () => {
+const Login = (props) => {
+
+  const [form, setValues] = useState({
+    email: '',
+  });
+
+  const handleInput = (event) => {
+    setValues({
+      ...form,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(form);
+    props.loginRequest(form);
+    props.history.push('/administrator');
+  };
+
   return (
     <section className='Login'>
       <Link to='/'>
@@ -14,13 +35,15 @@ const Login = () => {
       </Link>
       <div className='Login__container'>
         <h1>Bienvenidos a Nextep</h1>
-        <form className='Login__container--form'>
+
+        <form className='Login__container--form' onSubmit={handleSubmit}>
           <div className='Login__container--form--options'>
             <input
               name='email'
               className='input'
               type='text'
               placeholder='Usuario'
+              onChange={handleInput}
             />
             <span>
               <i className='fas fa-user' />
@@ -32,11 +55,13 @@ const Login = () => {
               className='input'
               type='password'
               placeholder='Contraseña'
+              onChange={handleInput}
             />
             <span>
               <i className='fas fa-lock' />
             </span>
           </div>
+          <button className='button--send' type='submit'>Iniciar sesión</button>
           <Link to='/administrator' className='button--send' type='submit'>
             Ingresar como admin
           </Link>
@@ -60,4 +85,8 @@ const Login = () => {
   );
 };
 
-export default Login;
+const mapDispatchToProps = {
+  loginRequest,
+};
+
+export default connect(null, mapDispatchToProps)(Login);

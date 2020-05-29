@@ -14,11 +14,9 @@ import '../assets/styles/App.scss';
 const App = () => {
   return (
     <BrowserRouter>
-      <Switch>
-        <Route exact path='/' component={Login} />
-      </Switch>
       <Layout>
         <Switch>
+          <Route exact path='/' component={Login} />
           <Route exact path='/remember' component={RememberInfo} />
           <Route exact path='/bacteriologist' component={Bacteriologist} />
           <Route exact path='/administrator' component={Administrator} />
