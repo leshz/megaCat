@@ -1,18 +1,14 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-
+import { connect } from 'react-redux';
 import '../assets/styles/containers/_administrator.scss';
 import User from './User';
 import UserItem from '../components/UserItem';
 import csvIcon from '../assets/static/csv-file.png';
-import useInitialState from '../hooks/useInitialState';
 
 // import '../containers/Pagination'
-const API = 'http://localhost:3000/initialState/';
 
-const Administrator = () => {
-  const initialState = useInitialState(API);
-
+const Administrator = ({ users, titleAdmin }) => {
   return (
     <div>
       <main className='mainContainer'>
@@ -80,7 +76,7 @@ const Administrator = () => {
 
         {/* zona de la lista de registros */}
         <User>
-          {initialState.users.map((item) => (
+          {users.map((item) => (
             <UserItem key={item.id} {...item} />
           ))}
         </User>
@@ -96,4 +92,11 @@ const Administrator = () => {
   );
 };
 
-export default Administrator;
+const mapStateToProps = state => {
+  return {
+    users: state.users,
+    titleAdmin: state.titleAdmin,
+  };
+};
+
+export default connect(mapStateToProps, null)(Administrator);
