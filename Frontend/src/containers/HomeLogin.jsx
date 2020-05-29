@@ -22,25 +22,24 @@ const Login = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(form);
     props.loginRequest(form);
     props.history.push('/administrator');
-    // switch (form.email.toLowerCase()) {
-    //   case 'fertorresmx@gmail.com':
-    //     {
-    //       props.history.push('/administrator');
-    //       break;
-    //     };
+    switch (form.email.toLowerCase()) {
+      case 'fertorresmx@gmail.com':
+        {
+          props.history.push('/administrator');
+          break;
+        };
 
-    //   case 'PATIENT':
-    //     {
-    //       props.history.push('/patient');
-    //       break;
-    //     };
+      case 'PATIENT':
+        {
+          props.history.push('/patient');
+          break;
+        };
 
-    //   default:
-    //     props.history.push('/patient');
-    // }
+      default:
+        props.history.push('/patient');
+    }
   };
 
   return (

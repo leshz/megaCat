@@ -2,6 +2,7 @@
 import React from 'react';
 
 import '../assets/styles/containers/_administrator.scss';
+import Header from '../components/Header';
 import Exam from './Exam';
 import ExamItem from '../components/ExamItem';
 import useInitialState from '../hooks/useInitialState';
@@ -14,6 +15,7 @@ const Patient = () => {
 
   return (
     <div>
+      <Header />
       <main className='mainContainer'>
         <div className='searchBox'>
           <input
