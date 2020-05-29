@@ -23,7 +23,22 @@ const Login = (props) => {
     event.preventDefault();
     console.log(form);
     props.loginRequest(form);
-    props.history.push('/administrator');
+    switch (form.email.toLowerCase()) {
+      case 'fertorresmx@gmail.com':
+        {
+          props.history.push('/administrator');
+          break;
+        };
+
+      case 'PATIENT':
+        {
+          props.history.push('/patient');
+          break;
+        };
+
+      default:
+        props.history.push('/patient');
+    }
   };
 
   return (
@@ -62,12 +77,6 @@ const Login = (props) => {
             </span>
           </div>
           <button className='button--send' type='submit'>Iniciar sesión</button>
-          <Link to='/administrator' className='button--send' type='submit'>
-            Ingresar como admin
-          </Link>
-          <Link to='/patient' className='button--send' type='submit'>
-            Ingresar como paciente
-          </Link>
           <Link to='/remember'>¿Has olvidado tu Usuario/Contraseña?</Link>
         </form>
         <div className='Login__container--info'>
