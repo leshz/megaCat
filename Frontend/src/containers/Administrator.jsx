@@ -2,6 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import '../assets/styles/containers/_administrator.scss';
+import Header from '../components/Header';
 import User from './User';
 import UserItem from '../components/UserItem';
 import csvIcon from '../assets/static/csv-file.png';
@@ -11,6 +12,7 @@ import csvIcon from '../assets/static/csv-file.png';
 const Administrator = ({ users, titleAdmin }) => {
   return (
     <div>
+      <Header />
       <main className='mainContainer'>
         <div className='searchBox'>
           <input

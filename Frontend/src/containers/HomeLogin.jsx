@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -23,22 +24,23 @@ const Login = (props) => {
     event.preventDefault();
     console.log(form);
     props.loginRequest(form);
-    switch (form.email.toLowerCase()) {
-      case 'fertorresmx@gmail.com':
-        {
-          props.history.push('/administrator');
-          break;
-        };
+    props.history.push('/administrator');
+    // switch (form.email.toLowerCase()) {
+    //   case 'fertorresmx@gmail.com':
+    //     {
+    //       props.history.push('/administrator');
+    //       break;
+    //     };
 
-      case 'PATIENT':
-        {
-          props.history.push('/patient');
-          break;
-        };
+    //   case 'PATIENT':
+    //     {
+    //       props.history.push('/patient');
+    //       break;
+    //     };
 
-      default:
-        props.history.push('/patient');
-    }
+    //   default:
+    //     props.history.push('/patient');
+    // }
   };
 
   return (
@@ -76,7 +78,13 @@ const Login = (props) => {
               <i className='fas fa-lock' />
             </span>
           </div>
-          <button className='button--send' type='submit'>Iniciar sesión</button>
+          <button className='button--send'>Iniciar sesión</button>
+          {/* <Link to='/administrator' className='button--send' type='submit'>
+            Ingresar como admin
+          </Link>
+          <Link to='/patient' className='button--send' type='submit'>
+            Ingresar como paciente
+          </Link> */}
           <Link to='/remember'>¿Has olvidado tu Usuario/Contraseña?</Link>
         </form>
         <div className='Login__container--info'>
