@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { connect } from 'react-redux';
+
 import '../assets/styles/containers/_administrator.scss';
 import Header from '../components/Header';
 import User from './User';
@@ -97,7 +98,6 @@ const Administrator = ({ users }) => {
 const mapStateToProps = (state) => {
   return {
     users: state.users,
-    titleAdmin: state.titleAdmin,
   };
 };
 
