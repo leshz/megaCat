@@ -1,33 +1,112 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import gravatar from '../utils/gravatar';
+import { logoutRequest } from '../actions';
 
 import iconType from '../assets/static/iconotipo.png';
 import logo from '../assets/static/logotipo.png';
 import userIcon from '../assets/static/circle-regular.png';
 import '../assets/styles/components/Header.scss';
 
-const Header = () => (
-  <header className='header'>
-    <div className='main-container'>
-      <figure className='imagotipo'>
-        <img className='iconotipo' src={iconType} alt='Iconotipo de Netxtep' />
-        <img className='logotipo' src={logo} alt='logotipo' />
-      </figure>
-      <span className='tittle-container'>
-        <h1 className='tittle'>Mis Resultados de Laboratorio</h1>
-      </span>
-      <span className='user-container'>
-        <a href='usersesion'>
-          <img className='user-icon' src={userIcon} alt='User' />
-        </a>
-      </span>
-      <span>
-        <p className='patient-indication'>Panel del Paciente</p>
-      </span>
-      <span className='namebar'>
-        <p>Name user/ ID Code</p>
-      </span>
-    </div>
-  </header>
-);
+const Header = (props) => {
 
-export default Header;
+  const { user, setRoleType } = props;
+  const hasUser = Object.keys(user).length > 0;
+
+  const handleLogout = () => {
+    props.logoutRequest({});
+  };
+
+  return (
+    <header className='header'>
+      <div className='main-container'>
+
+        <figure className='imagotipo'>
+          <Link to='/'>
+            <img
+              className='iconotipo'
+              src={iconType}
+              alt='Iconotipo de Netxtep'
+            />
+            <img
+              className='logotipo'
+              src={logo}
+              alt='logotipo'
+            />
+          </Link>
+        </figure>
+
+        <span className='tittle-container'>
+          <h1 className='tittle'>Mis Resultados de Laboratorio</h1>
+        </span>
+
+        <div className='header__menu'>
+          <div className='header__menu--profile'>
+            {hasUser ?
+              (
+                <img
+                  className='user-icon'
+                  src={gravatar(user.email)}
+                  alt={user.email}
+                />
+              ) :
+              (
+                <img
+                  className='user-icon'
+                  src={userIcon}
+                  alt='User Profile'
+                />
+              )}
+            <p>Perfil</p>
+          </div>
+
+          <ul>
+            {hasUser ?
+              <li><a href='/'>{user.name}</a></li> :
+              null }
+
+            {hasUser ?
+              (
+                <li>
+                  <Link to='/' onClick={handleLogout}>
+                    Cerrar Sesión
+                  </Link>
+                </li>
+              ) :
+              (
+                <li>
+                  <Link to='/login'>
+                    Iniciar Sesión
+                  </Link>
+                </li>
+              ) }
+          </ul>
+        </div>
+
+        <span>
+          <p className='patient-indication'>
+            Panel del
+            {' '}
+            {setRoleType}
+          </p>
+        </span>
+        <span className='namebar'>
+          <p>Name user/ ID Code</p>
+        </span>
+      </div>
+    </header>
+  );
+};
+
+const mapStateToProps = (state) => {
+  return {
+    user: state.user,
+  };
+};
+
+const mapDispatchToProps = {
+  logoutRequest,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

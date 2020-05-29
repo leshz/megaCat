@@ -14,8 +14,8 @@ const User = ({ children }) => (
           <th>Domicilio</th>
           <th>Registro Médico</th>
           <th>Borrado?</th>
-          <th>Fecha creación</th>
-          <th>Fecha actualización</th>
+          <th>Icon 01</th>
+          <th>Icon 02</th>
         </tr>
       </thead>
       <tbody>{children}</tbody>
