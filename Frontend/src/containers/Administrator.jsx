@@ -2,7 +2,6 @@
 import React from 'react';
 
 import '../assets/styles/containers/_administrator.scss';
-import Header from '../components/Header';
 import User from './User';
 import UserItem from '../components/UserItem';
 import csvIcon from '../assets/static/csv-file.png';
@@ -16,7 +15,6 @@ const Administrator = () => {
 
   return (
     <div>
-      <Header />
       <main className='mainContainer'>
         <div className='searchBox'>
           <input
