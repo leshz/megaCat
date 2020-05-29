@@ -9,10 +9,10 @@ import csvIcon from '../assets/static/csv-file.png';
 
 // import '../containers/Pagination'
 
-const Administrator = ({ users, titleAdmin }) => {
+const Administrator = ({ users }) => {
   return (
     <div>
-      <Header />
+      <Header setRoleType='Administrador' />
       <main className='mainContainer'>
         <div className='searchBox'>
           <input

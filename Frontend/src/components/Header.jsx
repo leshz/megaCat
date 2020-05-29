@@ -10,7 +10,8 @@ import userIcon from '../assets/static/circle-regular.png';
 import '../assets/styles/components/Header.scss';
 
 const Header = (props) => {
-  const { user } = props;
+
+  const { user, setRoleType } = props;
   const hasUser = Object.keys(user).length > 0;
 
   const handleLogout = () => {
@@ -84,7 +85,11 @@ const Header = (props) => {
         </div>
 
         <span>
-          <p className='patient-indication'>Panel del ?</p>
+          <p className='patient-indication'>
+            Panel del
+            {' '}
+            {setRoleType}
+          </p>
         </span>
         <span className='namebar'>
           <p>Name user/ ID Code</p>
