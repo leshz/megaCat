@@ -1,3 +1,4 @@
+const pluralize = require('pluralize')
 const store = require('../db/models')
 
 const DEFAULTS = {
@@ -12,7 +13,8 @@ const pagination = (count, rows, itemsPerPage, currentPage) => ({
   page: currentPage,
   rows: [...rows]
 })
-async function list (model, paginationConfig) {
+async function list (table, paginationConfig) {
+  const model = pluralize.singular(table)
   const config = {}
 
   if (paginationConfig) {
@@ -31,21 +33,26 @@ async function list (model, paginationConfig) {
     ...config
   })
 }
-async function get (model, id) {
+async function get (table, id) {
+  const model = pluralize.singular(table)
   return store[model].findByPk(id)
 }
-async function insert (model, data) {
+async function insert (table, data) {
+  const model = pluralize.singular(table)
   return store[model].create(data)
 }
-async function update (model, id, data) {
+async function update (table, id, data) {
+  const model = pluralize.singular(table)
   return store[model].update({ ...data }, { where: { id } })
 }
-async function remove (model, id) {
+async function remove (table, id) {
+  const model = pluralize.singular(table)
   const instance = await store[model].findByPk(id)
   await instance.destroy()
   return true
 }
-async function query (model, where, paginationConfig = null, include = null) {
+async function query (table, where, paginationConfig = null, include = null) {
+  const model = pluralize.singular(table)
   const config = {}
   if (where) {
     config.where = where
@@ -63,7 +70,8 @@ async function query (model, where, paginationConfig = null, include = null) {
 
     return store[model].findAndCountAll({
       ...config,
-      distinct: true
+      distinct: true,
+      raw: true
     }).then(({ count, rows }) => pagination(count, rows, itemsPerPage, currentPage))
   }
 

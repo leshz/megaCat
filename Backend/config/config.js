@@ -24,7 +24,7 @@ module.exports = {
     port: process.env.KNEX_PORT || '',
     client: process.env.KNEX_CLIENT || ''
   },
-  dbMotor: process.env.DB_MOTOR || 'dummy',
+  storeMotor: process.env.STORE_MOTOR || 'dummy',
   sequelize: {
     development: {
       ...dbConfig
