@@ -15,7 +15,7 @@ class Doctor extends React.Component {
   render() {
     const { search } = this.state;
 
-    const filteredUsersMock = usersMock.filter((item) => {
+    const filteredUsers = usersMock.filter((item) => {
       return (
         `${item.id_number} ${item.first_name} ${item.last_name}`
           .toLowerCase()
@@ -23,8 +23,12 @@ class Doctor extends React.Component {
       );
     });
 
+
     return (
       <section className="Container">
+        <div className="Name--template">
+          <h1>Listado de Pacientes</h1>
+        </div>
         <div className="Patient--search">
           <input type="text" placeholder="Buscar" onChange={this.onChange} />
           <span>
@@ -38,7 +42,7 @@ class Doctor extends React.Component {
             <h3>Ver registro de paciente</h3>
           </div>
           <ul className="Patient__list--cards">
-            {filteredUsersMock.map((item) => {
+            {filteredUsers.map((item) => {
               return (
                 <li key={item.id} className="Patient__card">
                   <p>{item.id_number}</p>
@@ -46,7 +50,7 @@ class Doctor extends React.Component {
                     {item.first_name} {item.last_name}
                   </p>
                   <Link
-                    to="/patient"
+                    to={`/personalInfo/${item.id}`}
                     className="Patient__watch--icon"
                     title="Ver Registro"
                   >

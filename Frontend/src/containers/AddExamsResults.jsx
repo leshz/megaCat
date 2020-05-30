@@ -29,11 +29,6 @@ class AddExamsResults extends React.Component {
       <section className="Container">
         <section className="Add__exam">
           <h1>Agregar resultados a exámenes</h1>
-          <div className="Add__exam--name--patient">
-            <h3>
-              /
-            </h3>
-          </div>
           <div className="Add__exam--options">
             <h3>Exámen</h3>
             <h3>Descripción</h3>
