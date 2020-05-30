@@ -1,12 +1,15 @@
+$fuente-principal: 'Quicksand', sans-serif;
+$fuente-secundaria: Helvetica;
+
 .Container-Admin {
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 15% 15% 15% 1fr;
+    grid-template-rows: 10% 10% 10% 1fr;
+    background-color: #EFF1FF;
 }
 
 .searchBox{
     display: flex;
-    border: solid red;
     grid-column: 1 / 4;
     justify-content: center;
     align-items: center;
@@ -40,10 +43,9 @@
     display: block;
 }
 
-.selectrOderList {
+.selectrOderList p {
     grid-column: 2;
-    justify-content: center;
-    text-align: center;
+    text-align: start;
     display: block;
 }
 
@@ -55,16 +57,20 @@
     color: #999999;
 }
 
-.check-card {
+.check-card p {
     grid-column: 1;
     text-align: start;
-    margin-left: 15px;
+    margin-left: auto;
 }
 
-.csvIcon {
+#checkbox1 {
+    margin-left: 25px;
+}
+
+.cvsIcon__container{
     display: grid;
     grid-column: 4;
-    grid-row: 2/4;
+    grid-row: 2;
     margin: auto;
 }
 
@@ -75,48 +81,36 @@
 
 .addUser {
     display: inline;
+    text-align: start;
 }
 
-.iconContainer {
-    width: 50px;
-    height: 50px;
-}
-.addUser span p {
+.addUser p {
     color: #00c2ff;
     font-size: 15px;
     font-weight: bold;
-    display: inline-flex;
-    position: relative;
+    text-align: start;
+    display: inline-block; 
 }
-
-
 
 .fas.fa-plus-circle {
     font-size: 40px;
     color: #00c2ff;
-    align-self: center;
-    position: relative;
-    justify-items: center;
-    align-items: center;
+    margin-left: 10px;
 }
 
-.pagination {
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    justify-items: center;
-}
-
-.cardContainer {
-    background-color: rgb(115, 130, 218);
-    grid-column: span 3;
-    grid-row: 4;
-    height: 200px;
+.pagination p {
+    text-align: start;
 }
 
 .tittle-SideBar {
-    justify-content: center;
     text-align: center;
+    margin-top: 4em;
+    font-family: $fuente-secundaria;
+    font-weight: bold;
+}
+.csvIcon {
+    width: 70px;
+    margin: 0;
 }
 
 #button-csv {
@@ -124,6 +118,10 @@
     height: 35px;
     border-radius: 15px;
     grid-column: 4;
-    align-content: start;
-    justify-content: center;
+    margin: 0 auto auto auto;
+}
+
+.user__section {    
+    grid-row: 4;
+    grid-column: span 4;
 }

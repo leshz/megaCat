@@ -3,16 +3,22 @@ $background-color: linear-gradient(to left bottom, #1b2470 50%, #293585 50%);
 $color-font:#FFB015;
 $color-box: #FF5C00;
 
-.header-container {
-    margin-block-start: 0em;
-    display: grid;
-    grid-template-columns: 350px 600px 1fr;
-    grid-row: 2fr 2fr;
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.header-container {
+#header-container {
+    margin-block-start: 0em;
+    display: grid;
+    grid-template-columns: 350px 700px 1fr;
+    grid-template-rows: 100px 90px;
+}
+
+#header-container {
     width: 100vw;
-    height: 120px;
+    height: 130px;
     padding-top: 10px; 
     background: $background-color;
 }
@@ -31,20 +37,6 @@ $color-box: #FF5C00;
     }
 }
 
-
-.tittle {
-    display: grid;
-    justify-self: center;
-    width: 500px;
-    height: 75px;
-    h1 {
-        width: 470px;
-        color: $color-font;
-        font-family: $fuente-principal;
-        font-weight: 600;
-    }
-}
-
     .user-container {
     display: grid;
     justify-self: flex-end;
@@ -59,26 +51,29 @@ $color-box: #FF5C00;
     width: 40px;
 }
 
-.patient-indication {
+.tittle-indication p {
     font-family: 'Quicksand', sans-serif;
     font-weight: 600;
     font-size: medium;
     color: $color-font;
 }
 
-.patient-indication {
-    margin-top: 10px;
+.tittle-indication {
     margin-left: 25px;
+    margin-top: -30px;
+    grid-column: 1;
+    grid-row: 2;
     justify-content: center;
 }
 
 .namebar {
     background: $color-box;
     display: grid;
-    grid-column: 3;
+    grid-column: 2;
+    grid-row: 1;
     width: 350px;
     height: 30px;
-    margin-top: 25px;
+    margin: auto;
     border: 4px solid red;
     box-sizing: border-box;
     border-radius: 30px;
@@ -91,18 +86,29 @@ $color-box: #FF5C00;
         font-weight: 600;
     }
 
-.header__menu li a {
+.header__menu {
+    grid-column: end;
+}
+
+    .header__menu p {
+    margin: 0;
+    }
+
+    .header__menu li a {
     color: white;
     text-decoration: none;
     }
 
     .header__menu li a:hover {
     text-decoration: underline;
+    // display: block;
     }
 
     .header__menu--profile {
     align-items: center;
-    display: flex;
+    display: grid;
     cursor: pointer;
+    grid-column: 3;
     }
+
 }

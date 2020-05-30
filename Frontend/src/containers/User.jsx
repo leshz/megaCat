@@ -1,4 +1,5 @@
 import React from 'react';
+import '../assets/styles/components/User.scss';
 
 const User = ({ children }) => (
   <div className='margen'>
@@ -14,8 +15,8 @@ const User = ({ children }) => (
           <th>Domicilio</th>
           <th>Registro Médico</th>
           <th>Borrado?</th>
-          <th>Icon 01</th>
-          <th>Icon 02</th>
+          <th>Editar</th>
+          <th>Eliminar</th>
         </tr>
       </thead>
       <tbody>{children}</tbody>

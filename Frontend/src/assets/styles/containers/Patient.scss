@@ -1,0 +1,76 @@
+$fuente-principal: 'Quicksand', sans-serif;
+$fuente-secundaria: Helvetica;
+$color-font:#FFB015;
+
+.mainContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 10% 20% 1fr;
+}
+
+.tittle__tipeuser {
+    display: grid;
+    // justify-self: center;
+    grid-column: 2;
+    margin: -60px auto auto auto;
+    width: 400px;
+    height: 75px;
+    h2 {
+        width: 350px;
+        color: $color-font;
+        font-family: $fuente-principal;
+        font-weight: 600;
+    }
+}
+
+.selectTypeUser {
+    grid-column: 1;
+}
+
+.selectrOderList {
+    grid-column: 2;
+    justify-content: center;
+    text-align: center;
+    display: block;
+}
+
+.selectrOderList select {
+    margin-left: 15px;
+}
+
+.searchIcon {
+    color: #999999;
+}
+
+.check-item {
+    grid-column: 1;
+}
+
+.pagination {
+    grid-column: 3;
+    justify-content: center;
+    text-align: center;
+    display: block;
+}
+
+#button-download {
+    width: 280px;
+    height: 35px;
+    border-radius: 15px;
+    grid-column: 4;
+    align-content: start;
+    justify-content: center;
+    font-family: Helvetica;
+    font-weight: bold;
+}
+
+.fas.fa-file-pdf {
+    color: #c41212;
+    font-size: medium;
+    margin-right: 10px;
+}
+
+.exam_section {
+    border: solid rgb(255, 153, 70);
+    grid-column: 1/4;
+}
