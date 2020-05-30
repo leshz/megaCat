@@ -3,12 +3,17 @@ const users = require('../store/mocks/UsersMock')
 const storeMock = require('../store/mocks/storeMock')
 const userCtrl = require('../api/components/user/index')
 const emailCtrl = require('../api/components/email/index')
+const authRolesCtrl = require('../api/components/auth_roles/index')
 jest.mock('../api/components/user/index.js', () => ({
   insert: jest.fn((user) => ({ ...user, id: '1234567890' }))
 }))
 
 jest.mock('../api/components/email/index.js', () => ({
   sendNewUser: jest.fn((data) => true)
+}))
+
+jest.mock('../api/components/auth_roles/index', () => ({
+  insert: jest.fn(() => true)
 }))
 
 describe('API | Components | Auth', () => {
@@ -73,7 +78,6 @@ describe('API | Components | Auth', () => {
       }
 
       beforeEach(() => {
-        // console.log('userCtrl.insert', userCtrl.insert)
         userCtrl.insert.mockClear()
         emailCtrl.sendNewUser.mockClear()
       })
@@ -107,9 +111,11 @@ describe('API | Components | Auth', () => {
         const response = await controller.addUser(userData)
         const username = generateUsername(userData.idNumber, userData.firstName, userData.lastName)
         const userInserted = userCtrl.insert.mock.results[0].value
+        const authRoleInserted = authRolesCtrl.insert.mock.calls[0]
         expect(response).toBeTruthy()
         expect(username.slice(0, -2))
           .toBe(userInserted.username.slice(0, -2))
+        expect(authRoleInserted).toEqual([userInserted.id, userData.roleId])
         expect(username)
           .not
           .toBe(userInserted.username)

@@ -5,6 +5,7 @@ const auth = require('../../../auth/')
 const { generateUsername } = require('../../../utils/userUtils')
 const userCtrl = require('../user/index')
 const emailCtrl = require('../email/index')
+const authRolesCtrl = require('../auth_roles/index')
 
 const TABLE = 'auths'
 const saltRounds = 10
@@ -21,7 +22,7 @@ module.exports = (store) => {
     try {
       if (!userData) throw new Error('no data')
 
-      const { idNumber, firstName, lastName, email, contactNumber, address } = userData
+      const { idNumber, firstName, lastName, email, contactNumber, address, roleId } = userData
 
       let username = generateUsername(idNumber, firstName, lastName)
       const password = cryptoRandomString({ length: 16, type: 'base64' })
@@ -30,7 +31,12 @@ module.exports = (store) => {
 
       if (hasUsername.length > 0) {
         const randomNumber = () => Math.ceil(Math.random() * 9)
-        username = `${username.slice(0, -2)}${randomNumber()}${randomNumber()}`
+        let newUsername = `${username.slice(0, -2)}${randomNumber()}${randomNumber()}`
+        if (username === newUsername) {
+          newUsername = `${username.slice(0, -2)}${randomNumber()}${randomNumber()}`
+        } else {
+          username = `${username.slice(0, -2)}${randomNumber()}${randomNumber()}`
+        }
       }
 
       const authData = {
@@ -48,9 +54,10 @@ module.exports = (store) => {
         username
       })
 
+      await authRolesCtrl.insert(user.id, roleId)
+
       await store.insert(TABLE, { ...authData, id: user.id })
       // ToDo: Add role
-      // ToDo: Send email
       const emailInfo = {
         ...JSON.parse(JSON.stringify(user)),
         password: password
@@ -82,7 +89,7 @@ module.exports = (store) => {
         user
       }
     } catch (error) {
-      throw boom.badRequest()
+      throw boom.unauthorized()
     }
   }
 
