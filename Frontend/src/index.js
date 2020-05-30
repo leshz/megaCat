@@ -1,9 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+import runtime from 'serviceworker-webpack-plugin/lib/runtime';
+import App from './routes/App'
 import reducer from './reducers';
-import App from './routes/App';
+
+if ('serviceWorker' in navigator) {
+  runtime.register();
+}
 
 const initialState = {
   'user': {},
@@ -359,3 +364,5 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('app'),
 );
+
+ReactDOM.render(<App />, container)

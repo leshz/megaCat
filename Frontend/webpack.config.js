@@ -1,6 +1,7 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin')
 
 module.exports = {
   entry: './src/index.js',
@@ -53,6 +54,7 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
+    open: 'Google Chrome'
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -60,7 +62,11 @@ module.exports = {
       filename: './index.html',
     }),
     new MiniCssExtractPlugin({
-      filename: 'assets/[name].css',
+      filename: 'assets/[name].css'
+    }),
+    new ServiceWorkerWebpackPlugin({
+      entry: path.join(__dirname, './src/sw/firebase-messaging-sw.js'),
+      filename: 'firebase-messaging-sw.js'
     }),
   ],
-};
+}

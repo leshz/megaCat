@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { loginRequest } from '../actions';
+import messaging from '../conf/firebase';
 
 import logo from '../assets/static/logo.png';
 import '../assets/styles/containers/Login.scss';
@@ -41,6 +42,17 @@ const Login = (props) => {
         props.history.push('/patient');
     }
   };
+  messaging.requestPermission()
+    .then(() =>{
+      return messaging.getToken();
+    })
+    .then(e => {
+      console.log(e);
+    })
+    .catch(function (err) {
+      console.log('Unable to get permission to notify.', err);
+    });
+  navigator.serviceWorker.addEventListener('message', (message) => console.log(message));
 
   return (
     <section className='Login'>

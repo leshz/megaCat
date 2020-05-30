@@ -21,17 +21,20 @@
   "homepage": "https://github.com/FernandoTorresL/megaCat#readme",
   "dependencies": {
     "babel-eslint": "^10.1.0",
+    "dotenv": "^8.2.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.20.0",
+    "firebase": "^7.14.6",
     "md5": "^2.2.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.2.0",
-    "redux": "^4.0.5"
+    "redux": "^4.0.5",
+    "serviceworker-webpack-plugin": "^1.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.10.1",
