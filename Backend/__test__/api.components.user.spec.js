@@ -1,6 +1,6 @@
-const Controller = require('../components/user/controller.js')
-const storeMock = require('../../store/mocks/storeMock.js')
-const userMock = require('../../store/mocks/UsersMock.json')
+const Controller = require('../api/components/user/controller.js')
+const storeMock = require('../store/mocks/storeMock.js')
+const userMock = require('../store/mocks/UsersMock.json')
 
 describe('API | Components | User', () => {
   const controller = Controller(storeMock)

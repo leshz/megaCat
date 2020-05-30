@@ -1,21 +1,21 @@
-const auths = require('../../store/mocks/AuthMock')
-const users = require('../../store/mocks/UsersMock')
-const storeMock = require('../../store/mocks/storeMock')
-const userCtrl = require('../components/user/index')
-const emailCtrl = require('../components/email/index')
-jest.mock('../components/user/index.js', () => ({
+const auths = require('../store/mocks/AuthMock')
+const users = require('../store/mocks/UsersMock')
+const storeMock = require('../store/mocks/storeMock')
+const userCtrl = require('../api/components/user/index')
+const emailCtrl = require('../api/components/email/index')
+jest.mock('../api/components/user/index.js', () => ({
   insert: jest.fn((user) => ({ ...user, id: '1234567890' }))
 }))
 
-jest.mock('../components/email/index.js', () => ({
+jest.mock('../api/components/email/index.js', () => ({
   sendNewUser: jest.fn((data) => true)
 }))
 
 describe('API | Components | Auth', () => {
-  const { rolesEnum } = require('../../store/mocks/RolesMock')
+  const { rolesEnum } = require('../store/mocks/RolesMock')
 
   describe('Controllers', () => {
-    const ctrl = require('../components/auth/controller')
+    const ctrl = require('../api/components/auth/controller')
 
     const controller = ctrl(storeMock)
 
@@ -61,7 +61,7 @@ describe('API | Components | Auth', () => {
     })
 
     describe('addUser', () => {
-      const { generateUsername } = require('../../utils/userUtils')
+      const { generateUsername } = require('../utils/userUtils')
       const userDataMock = {
         idNumber: users[1].idNumber,
         firstName: users[1].firstName,
