@@ -1,19 +1,21 @@
-const Controller = require('./controller')
+const Controller = require('./index')
 
 const express = require('express')
 const response = require('../../../network/response')
 
 const router = express.Router()
 
+router.get('/', testNotification)
+
 function testNotification (req, res) {
   return Controller.sendMessageMulticast(req.body)
     .then(data => {
       console.log('data', data)
-      response.success(req, res, response, 200)
+      response.success(req, res, data, 200)
     })
-    .catch(() => response.error(req, res, 'Invalid information', 401))
+    .catch((err) => {
+      response.error(req, res, err, 401)
+    })
 }
-
-router.get('/', testNotification)
 
 module.exports = router

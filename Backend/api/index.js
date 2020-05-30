@@ -18,7 +18,7 @@ app.use(passport.initialize())
 app.use('/', welcome)
 app.use('/api/auth', auth)
 app.use('/api/types', examTypes)
-app.use('/notification', notification)
+app.use('/api/notification', notification)
 
 app.use(errors)
 

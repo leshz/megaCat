@@ -8,22 +8,26 @@ const appFirebase = admin.initializeApp({
   databaseURL: FB_APP_NAME
 })
 
-const sendMessageMulticast = (informaton) => {
-  return new Promise((resolve, reject) => {
-    const { token, message, title } = informaton
-    const notification = {
-      token: token,
-      data: {
-        title: title,
-        body: message
+module.exports = (store) => {
+  function sendMessageMulticast (information) {
+    return new Promise((resolve, reject) => {
+      const { token, message, title } = information
+      const notification = {
+        token: token,
+        data: {
+          title: title,
+          body: message
+        }
       }
-    }
-    appFirebase
-      .messaging()
-      .send(notification)
-      .then((e) => resolve(e))
-      .catch((err) => reject(err))
-  })
-}
+      appFirebase
+        .messaging()
+        .send(notification)
+        .then((e) => resolve(e))
+        .catch((err) => reject(err))
+    })
+  }
 
-module.exports = { sendMessageMulticast }
+  return {
+    sendMessageMulticast
+  }
+}
