@@ -53,10 +53,10 @@ main {
 }
 
 .user-container {
-    display: grid;
-    justify-self: flex-end;
-    align-items: flex-end;
-    margin-right: 40px;
+  display: grid;
+  justify-self: flex-end;
+  align-items: flex-end;
+  margin-right: 40px;
 }
 
 .userIcon {
@@ -101,4 +101,17 @@ main {
 
 
 
+.header__menu li a {
+  color: white;
+  text-decoration: none;
+}
 
+.header__menu li a:hover {
+  text-decoration: underline;
+}
+
+.header__menu--profile {
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+}
