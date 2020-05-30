@@ -1,8 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React from 'react';
-
+import React, { Fragment } from 'react';
 import '../assets/styles/containers/_administrator.scss';
-import Header from '../components/Header';
+import Header from '../components/Header.jsx';
 import User from './User';
 import UserItem from '../components/UserItem';
 import csvIcon from '../assets/static/csv-file.png';
@@ -15,34 +14,30 @@ const Administrator = () => {
   const initialState = useInitialState(API);
 
   return (
-    <div>
+      <Fragment>
       <Header />
-      <main className='mainContainer'>
+      <div className='Container-Admin'>
+
         <div className='searchBox'>
+          <span className='searchbar'>
+          <a href="/" className="searchIcon">
+          <i className='fas fa-search'/></a>
           <input
-            className='searchBar'
+            className='searchBusqueda'
             type='text'
-            placeholder='Search'
-            // Me falto la interactividad de la barra de busqueda
-            // value={query}
-            // onChange={(e) => {
-            //   setQuery(e.target.value)
-            // }}
-          />
-          <i className='fas fa-search' />
+            placeholder='Busqueda por nombre o ID'
+          /> 
+          </span>
         </div>
+
         <span className='sideBar'>
           <p className='tittle-SideBar'>Cargar información de grupo</p>
         </span>
-        <div>
-          <span>Seleccionar registro</span>
-        </div>
+
         <span className='selectTypeUser'>
           <p>
-            Selecciona tipo de usuario
-            <select name='Selecciona tipo de usuario'>
-              {/* La vista general es la vista por defecto
-                                    y se muestran los últimos registros sin importar el rol */}
+            Seleccionar tipo de usuario
+            <select name='Seleccionar tipo de usuario'>
               <option value='Vista general'>Vista general</option>
               <option value='Paciente<'>Paciente</option>
               <option value='Médico'>Médico</option>
@@ -50,10 +45,11 @@ const Administrator = () => {
               <option value='Administrador'>Administrador</option>
             </select>
           </p>
-          <p className='selectrOderList'>
-            Ordenar por
-            {/* Este menú da la opción de visualizar resultados
-                            se puede precindir de esta opción, si nos da tiempo la hacemos */}
+        </span>
+
+        <span className='selectrOderList'>
+          <p>
+            Ordenar por:
             <select name='Ordenar por'>
               <option value='11'>Más reciente</option>
               <option value='12'>Más antiguo</option>
@@ -62,25 +58,31 @@ const Administrator = () => {
         </span>
 
         <span className='pagination'>
-          {/* El cógigo de Paginación funciona y esta importado, llarmarlo*/}
-          <p className='addUser'>Agregar nuevo usuario</p>
-          <i className='fas fa-plus-circle' />
+          <p>Paginación</p>
         </span>
-        {/* <script>
-              <strong>Usted esta viendo la lita de {props.roldeusuario} </strong>
-              Seguro que existe una mejor forma que
-              document.write(document.getElementById(roldeusuario).innerHTML...
-              para indicar que tipo de listas se muestran pero si no es algo sencillo lo quitamos
-            </script>
-        */}
-        <div className='csvIcon'>
-          <img src={csvIcon} alt='CSVIcon' />
+
+        <span className='check-card'>Seleccionar registro</span>
+
+        <span>
+          <p>Usted esta viendo la lista de</p>
+        </span>
+
+        <div className='addUser'>
+          <span>
+            <p>Agregar nuevo usuario</p>
+          </span>
+          <span className="iconContainer">
+              <a href="/" id='iconPlus'>           
+              <i className='fas fa-plus-circle'/></a>
+            </span>
         </div>
-        <button className='button-csv' type='button'>
+
+          <img src={csvIcon} alt='CSVIcon' className='csvIcon' />
+
+        <button id='button-csv' type='button'>
           Importar archivo .csv
         </button>
 
-        {/* zona de la lista de registros */}
         <User>
           {initialState.users.map((item) => (
             <UserItem key={item.id} {...item} />
@@ -88,13 +90,13 @@ const Administrator = () => {
         </User>
 
         <div className='cardContainer'>
-          {/* <input type='checkbox' id='cbox1' value='checkbox'>  */}
           <i className='fas fa-eye' />
           <i className='fas fa-edit' />
           <i className='fas fa-times-circle' />
         </div>
-      </main>
-    </div>
+      </div>
+      </Fragment>
+
   );
 };
 
