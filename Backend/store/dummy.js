@@ -49,7 +49,7 @@ async function query (table, q) {
   const keys = Object.keys(q)
   const key = keys[0]
   const results = collection.filter(item => item[key] === q[key]) || null
-  return results && results.length > 0 ? [...results] : null
+  return results && results.length > 0 ? [...results] : []
 }
 
 module.exports = {

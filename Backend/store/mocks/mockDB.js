@@ -6,11 +6,12 @@ const db = {
   auths,
   roles: [],
   permissions: [],
-  medical_records: [],
-  exams_users: [],
+  medicalrecords: [],
   exams: [],
-  exam_statuses: [],
-  exam_types: [],
+  examStatuses: [],
+  examTypes: [],
+  role_permissions: [],
+  auth_roles: [],
   firebase_notification_tokens: []
 }
 

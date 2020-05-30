@@ -16,6 +16,12 @@ module.exports = {
   jwt: {
     secret: process.env.JWT_SECRET || 'secret'
   },
+  email: {
+    emailHost: process.env.EMAIL_HOST || '',
+    emailPort: process.env.EMAIL_PORT || '',
+    emailUser: process.env.EMAIL_USER || '',
+    emailPassword: process.env.EMAIL_PASSWORD || ''
+  },
   knex: {
     host: process.env.KNEX_HOST || '',
     user: process.env.KNEX_USER || '',
@@ -24,7 +30,7 @@ module.exports = {
     port: process.env.KNEX_PORT || '',
     client: process.env.KNEX_CLIENT || ''
   },
-  dbMotor: process.env.DB_MOTOR || 'dummy',
+  storeMotor: process.env.STORE_MOTOR || 'dummy',
   sequelize: {
     development: {
       ...dbConfig
