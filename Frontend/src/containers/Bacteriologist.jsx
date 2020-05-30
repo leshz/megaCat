@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Header from '../components/Header.jsx';
 import usersMock from '../mocks/UsersMock.json';
 import '../assets/styles/containers/PatientList.scss';
 
@@ -24,6 +25,8 @@ class Bacteriologist extends React.Component {
     });
 
       return (
+        <>
+        <Header/>
         <section className="Container">
           <div className="Patient--search">
             <input 
@@ -63,6 +66,7 @@ class Bacteriologist extends React.Component {
             </ul>
           </section>
         </section>
+        </> 
       );
   }
 }
