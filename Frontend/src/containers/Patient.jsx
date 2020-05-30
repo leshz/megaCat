@@ -1,21 +1,19 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
+import { connect } from 'react-redux';
 
 import '../assets/styles/containers/_administrator.scss';
 import Header from '../components/Header';
 import Exam from './Exam';
 import ExamItem from '../components/ExamItem';
-import useInitialState from '../hooks/useInitialState';
 
 // import '../containers/Pagination'
-const API = 'http://localhost:3000/initialState/';
 
-const Patient = () => {
-  const initialState = useInitialState(API);
+const Patient = ({ exams }) => {
 
   return (
     <div>
-      <Header />
+      <Header setRoleType='Paciente' />
       <main className='mainContainer'>
         <div className='searchBox'>
           <input
@@ -74,7 +72,7 @@ const Patient = () => {
 
         {/* zona de la lista de registros */}
         <Exam>
-          {initialState.exams.map((item) => (
+          {exams.map((item) => (
             <ExamItem key={item.id} {...item} />
           ))}
         </Exam>
@@ -90,4 +88,10 @@ const Patient = () => {
   );
 };
 
-export default Patient;
+const mapStateToProps = (state) => {
+  return {
+    exams: state.exams,
+  };
+};
+
+export default connect(mapStateToProps, null)(Patient);

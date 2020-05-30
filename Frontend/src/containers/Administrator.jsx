@@ -1,21 +1,19 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { Fragment } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
+
 import '../assets/styles/containers/_administrator.scss';
 import Header from '../components/Header.jsx';
 import User from './User';
 import UserItem from '../components/UserItem';
 import csvIcon from '../assets/static/csv-file.png';
-import useInitialState from '../hooks/useInitialState';
 
 // import '../containers/Pagination'
-const API = 'http://localhost:3000/initialState/';
 
-const Administrator = () => {
-  const initialState = useInitialState(API);
-
+const Administrator = ({ users }) => {
   return (
-      <Fragment>
-      <Header />
+      <div>
+      <Header setRoleType='Administrador'/>
       <div className='Container-Admin'>
 
         <div className='searchBox'>
@@ -84,7 +82,7 @@ const Administrator = () => {
         </button>
 
         <User>
-          {initialState.users.map((item) => (
+          {users.map((item) => (
             <UserItem key={item.id} {...item} />
           ))}
         </User>
@@ -95,9 +93,15 @@ const Administrator = () => {
           <i className='fas fa-times-circle' />
         </div>
       </div>
-      </Fragment>
+      </div>
 
   );
 };
 
-export default Administrator;
+const mapStateToProps = (state) => {
+  return {
+    users: state.users,
+  };
+};
+
+export default connect(mapStateToProps, null)(Administrator);
