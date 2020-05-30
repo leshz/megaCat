@@ -2,7 +2,7 @@
 
 This is the backend project for the Platzi Master Challenge.
 
-You can read the [API REST Docs here](https://web.postman.co/collections/1023966-df43f39c-7774-4880-bc0b-8d92c9dd0dad?version=latest)
+You can read the [API REST Docs here](https://documenter.getpostman.com/view/1023966/Szt8c97m?version=latest)
 
 ## Installation
 
