@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt')
 const auth = require('../../../auth/')
 const { generateUsername } = require('../../../utils/userUtils')
 const userCtrl = require('../user/index')
+const emailCtrl = require('../email/index')
 
 const TABLE = 'auths'
 const saltRounds = 10
@@ -50,6 +51,11 @@ module.exports = (store) => {
       await store.insert(TABLE, { ...authData, id: user.id })
       // ToDo: Add role
       // ToDo: Send email
+      const emailInfo = {
+        ...JSON.parse(JSON.stringify(user)),
+        password: password
+      }
+      await emailCtrl.sendNewUser(emailInfo)
 
       return true
     } catch (error) {

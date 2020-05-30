@@ -2,9 +2,15 @@ const auths = require('../../store/mocks/AuthMock')
 const users = require('../../store/mocks/UsersMock')
 const storeMock = require('../../store/mocks/storeMock')
 const userCtrl = require('../components/user/index')
+const emailCtrl = require('../components/email/index')
 jest.mock('../components/user/index.js', () => ({
   insert: jest.fn((user) => ({ ...user, id: '1234567890' }))
 }))
+
+jest.mock('../components/email/index.js', () => ({
+  sendNewUser: jest.fn((data) => true)
+}))
+
 describe('API | Components | Auth', () => {
   const { rolesEnum } = require('../../store/mocks/RolesMock')
 
@@ -65,6 +71,12 @@ describe('API | Components | Auth', () => {
         address: users[1].address,
         roleId: rolesEnum.ADMINISTRATOR.id
       }
+
+      beforeEach(() => {
+        // console.log('userCtrl.insert', userCtrl.insert)
+        userCtrl.insert.mockClear()
+        emailCtrl.sendNewUser.mockClear()
+      })
       it('should insert a user', async (done) => {
         const userData = {
           ...userDataMock,
@@ -86,7 +98,6 @@ describe('API | Components | Auth', () => {
         expect(response).toBeTruthy()
         expect(userInserted).toEqual(userExpected)
         done()
-        userCtrl.insert.mockClear()
       })
 
       it('should generate a random two numbers different if hasUsername', async () => {

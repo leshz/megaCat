@@ -16,6 +16,12 @@ module.exports = {
   jwt: {
     secret: process.env.JWT_SECRET || 'secret'
   },
+  email: {
+    emailHost: process.env.EMAIL_HOST || '',
+    emailPort: process.env.EMAIL_PORT || '',
+    emailUser: process.env.EMAIL_USER || '',
+    emailPassword: process.env.EMAIL_PASSWORD || ''
+  },
   knex: {
     host: process.env.KNEX_HOST || '',
     user: process.env.KNEX_USER || '',

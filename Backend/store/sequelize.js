@@ -25,7 +25,8 @@ async function list (table, paginationConfig) {
 
     return store[model].findAndCountAll({
       ...config,
-      distinct: true
+      distinct: true,
+      raw: true
     }).then(({ count, rows }) => pagination(count, rows, itemsPerPage, currentPage))
   }
 
@@ -35,15 +36,15 @@ async function list (table, paginationConfig) {
 }
 async function get (table, id) {
   const model = pluralize.singular(table)
-  return store[model].findByPk(id)
+  return store[model].findByPk(id, { raw: true })
 }
 async function insert (table, data) {
   const model = pluralize.singular(table)
-  return store[model].create(data)
+  return store[model].create(data, { raw: true })
 }
 async function update (table, id, data) {
   const model = pluralize.singular(table)
-  return store[model].update({ ...data }, { where: { id } })
+  return store[model].update({ ...data }, { where: { id }, raw: true })
 }
 async function remove (table, id) {
   const model = pluralize.singular(table)
@@ -76,7 +77,8 @@ async function query (table, where, paginationConfig = null, include = null) {
   }
 
   return store[model].findAll({
-    ...config
+    ...config,
+    raw: true
   })
 }
 
