@@ -14,7 +14,7 @@ const PatientList = (props) => {
           {firstName} {lastName}
         </p>
         <Link
-          to={`/personalInfo/${id}`}
+          to="/personalInfo"
           className="Patient__watch--icon"
           title="Ver Registro"
         >
@@ -28,7 +28,7 @@ const PatientList = (props) => {
 };
 
 PatientList.propTypes = {
-  id: PropTypes.number,
+  // id: PropTypes.number,
   idNumber: PropTypes.number,
   firstName: PropTypes.string,
   lastName: PropTypes.string,

@@ -1,18 +1,15 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React from "react";
-import "../assets/styles/containers/Administrator.scss";
-import { connect } from "react-redux";
-import Header from "../components/Header.jsx";
-import User from "./User";
-import UserItem from "../components/UserItem";
-import csvIcon from "../assets/static/csv-file.png";
-
-// import '../containers/Pagination'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import '../assets/styles/containers/Administrator.scss';
+import User from './User';
+import UserItem from '../components/UserItem';
+import csvIcon from '../assets/static/csv-file.png';
 
 const Administrator = ({ users }) => {
   return (
     <div>
-      <Header setRoleType="Administrador" />
       <div className="Container-Admin">
         <div className="searchBox">
           <span className="searchbar">
@@ -36,7 +33,7 @@ const Administrator = ({ users }) => {
             Seleccionar tipo de usuario
             <select name="Seleccionar tipo de usuario">
               <option value="Vista general">Vista general</option>
-              <option value="Paciente">Paciente</option>
+              <option value="Paciente<">Paciente</option>
               <option value="Médico">Médico</option>
               <option value="Bacteriólogo">Bacteriólogo</option>
               <option value="Administrador">Administrador</option>
@@ -58,39 +55,36 @@ const Administrator = ({ users }) => {
           <p>Paginación</p>
         </span>
 
-        <span className="check-card">Seleccionar registro</span>
+        <span className="check-card">
+          <p>Seleccionar registro</p>
+          <input type="checkbox" name="chec[]" id="checkbox1" checked="" />
+        </span>
 
         <span>
           <p>Usted esta viendo la lista de</p>
         </span>
 
         <div className="addUser">
-          <span>
+          <Link to="/addUser" id="iconPlus">
             <p>Agregar nuevo usuario</p>
-          </span>
-          <span className="iconContainer">
-            <a href="/" id="iconPlus">
-              <i className="fas fa-plus-circle" />
-            </a>
-          </span>
+            <i className="fas fa-plus-circle" />
+          </Link>
         </div>
 
-        <img src={csvIcon} alt="CSVIcon" className="csvIcon" />
+        <div className="cvsIcon__container">
+          <img src={csvIcon} alt="CSVIcon" className="csvIcon" />
+        </div>
 
         <button id="button-csv" type="button">
           Importar archivo .csv
         </button>
 
-        <User>
-          {users.map((item) => (
-            <UserItem key={item.id} {...item} />
-          ))}
-        </User>
-
-        <div className="cardContainer">
-          <i className="fas fa-eye" />
-          <i className="fas fa-edit" />
-          <i className="fas fa-times-circle" />
+        <div className="user__section">
+          <User>
+            {users.map((item) => (
+              <UserItem key={item.id} {...item} />
+            ))}
+          </User>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Layout from '../components/Layout'
+import Layout from '../components/Layout';
 import Login from '../containers/HomeLogin';
 import RememberInfo from '../components/RememberInfo';
 import Bacteriologist from '../containers/Bacteriologist';
@@ -14,35 +14,33 @@ import Administrator from '../containers/Administrator';
 import Patient from '../containers/Patient';
 import NotFound from '../containers/NotFound';
 import '../assets/styles/App.scss';
+import AddUser from '../containers/AddUser';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={Login} />
-          <Route exact path="/remember" component={RememberInfo} />
-          <Layout>
-            <Route exact path="/bacteriologist" component={Bacteriologist} />
-            <Route exact path="/addExamResults" component={AddExamsResults} />
-            <Route exact path="/doctor" component={Doctor} />
-            <Route
-              path="/(personalInfo|medicalHistory|sheduleExams)/"
-              component={PatientInfo}
-            />
-            <Route exact path="/personalInfo" component={PersonalInfo} />
-            <Route
-              exact
-              path="/medicalHistory"
-              component={MedicalHistory}
-            />
-            <Route exact path="/sheduleExams" component={SheduleExams} />
-            <Route exact path="/administrator" component={Administrator} />
-            <Route exact path="/patient" component={Patient} />
-          </Layout>
-          <Route component={NotFound} />
-        </Switch>
-      </BrowserRouter>
-    );
-  }
-}   
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={Login} />
+        <Route exact path="/remember" component={RememberInfo} />
+        <Layout>
+          <Route exact path="/bacteriologist" component={Bacteriologist} />
+          <Route exact path="/addExamResults" component={AddExamsResults} />
+          <Route exact path="/doctor" component={Doctor} />
+          <Route
+            path="/(personalInfo|medicalHistory|sheduleExams)/"
+            component={PatientInfo}
+          />
+          <Route exact path="/personalInfo" component={PersonalInfo} />
+          <Route exact path="/medicalHistory" component={MedicalHistory} />
+          <Route exact path="/sheduleExams" component={SheduleExams} />
+          <Route exact path="/administrator" component={Administrator} />
+          <Route exact path="/patient" component={Patient} />
+          <Route exact path="/addUser" component={AddUser} />
+        </Layout>
+        <Route component={NotFound} />
+      </Switch>
+    </BrowserRouter>
+  );
+};
+
+export default App;

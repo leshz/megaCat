@@ -9,9 +9,9 @@ const Exam = ({ children }) => (
           <th>Fecha</th>
           <th>Nombre del exámen</th>
           <th>Status</th>
-          <th>Icono1</th>
-          <th>Icono2</th>
-          <th>Icono3</th>
+          <th>Disponibilidad</th>
+          <th>Descargar</th>
+          <th>Visualizar</th>
         </tr>
       </thead>
       <tbody>{children}</tbody>
