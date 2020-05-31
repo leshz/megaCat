@@ -1,6 +1,6 @@
 'use strict'
 const { Op } = require('sequelize')
-const { roles, rolesEnum } = require('../../store/mocks/RolesMock.js')
+const { roles, rolesNameEnum } = require('../../store/mocks/RolesMock.js')
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -11,10 +11,10 @@ module.exports = {
     return queryInterface.bulkDelete('roles', {
       name: {
         [Op.in]: [
-          rolesEnum.ADMINISTRATOR.name,
-          rolesEnum.MEDIC.name,
-          rolesEnum.BACTERIOLOGIST.name,
-          rolesEnum.PACIENT.name
+          rolesNameEnum.ADMINISTRATOR,
+          rolesNameEnum.MEDIC,
+          rolesNameEnum.BACTERIOLOGIST,
+          rolesNameEnum.PACIENT
         ]
       }
     }, {})
