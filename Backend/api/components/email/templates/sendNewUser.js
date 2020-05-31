@@ -6,7 +6,7 @@ const sendNewUser = (data) => `
     }
   </style>
   <h1>Hola ${data.firstName} ${data.lastName}</h1>
-  <p>Le damos la bienvenida a NextStep Labs, use estas credenciales en nuestra plataforma para acceder a todas las características creadas para usted:</p>
+  <p>Le damos la bienvenida a Nextep Labs, use estas credenciales en nuestra plataforma para acceder a todas las características creadas para usted:</p>
 
   <ul>
     <li><strong>Username: </strong>${data.username}</li>
