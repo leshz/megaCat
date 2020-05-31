@@ -33,6 +33,13 @@ const rolesEnum = {
   }
 }
 
+const rolesNameEnum = {
+  ADMINISTRATOR: rolesEnum.ADMINISTRATOR.name,
+  MEDIC: rolesEnum.MEDIC.name,
+  BACTERIOLOGIST: rolesEnum.BACTERIOLOGIST.name,
+  PACIENT: rolesEnum.PACIENT.name
+}
+
 const roles = [
   rolesEnum.ADMINISTRATOR,
   rolesEnum.MEDIC,
@@ -42,5 +49,6 @@ const roles = [
 
 module.exports = {
   rolesEnum,
+  rolesNameEnum,
   roles
 }
