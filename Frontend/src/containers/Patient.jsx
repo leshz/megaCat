@@ -6,8 +6,6 @@ import Header from '../components/Header';
 import Exam from './Exam';
 import ExamItem from '../components/ExamItem';
 
-// import '../containers/Pagination'
-
 const Patient = ({ exams }) => {
 
   return (

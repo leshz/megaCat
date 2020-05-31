@@ -14,7 +14,7 @@ const ExamItem = (props) => {
   } = props;
 
   return (
-    <tr key={id} className='dashboard'>
+    <tr key={id} className='exam'>
       <td className='exam__id'>{userId}</td>
       <td className='exam__date'>{examDate}</td>
       <td className='exam__name'>{examName}</td>

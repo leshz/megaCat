@@ -91,13 +91,6 @@ const Administrator = ({ users }) => {
             ))}
           </User>
         </div>
-
-        {/*
-        <div className='cardContainer'>
-          <i className='fas fa-eye' />
-          <i className='fas fa-edit' />
-          <i className='fas fa-times-circle' /> */}
-        {/* </div> */}
       </div>
     </div>
   );

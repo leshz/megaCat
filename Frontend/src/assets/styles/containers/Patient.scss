@@ -73,3 +73,14 @@ $color-font:#FFB015;
     display: grid;
     grid-column: span 3;
 }
+
+.exam-container Exam {
+    text-align: center;
+    justify-content: center;
+}
+
+@media screen and(max-width: 736px) {
+    Exam {
+        visibility: collapse
+    }
+}

@@ -77,9 +77,6 @@ $fuente-secundaria: Helvetica;
 .addUser {
     display: grid;
     grid-column: 3;
-}
-
-.addUser {
     display: inline;
     text-align: start;
 }
@@ -108,6 +105,7 @@ $fuente-secundaria: Helvetica;
     font-family: $fuente-secundaria;
     font-weight: bold;
 }
+
 .csvIcon {
     width: 70px;
     margin: 0;
@@ -125,3 +123,20 @@ $fuente-secundaria: Helvetica;
     grid-row: 4;
     grid-column: span 4;
 }
+
+@media screen and(max-width: 736px) {
+    .user__section {
+        grid-column: span 2;
+    } 
+    #button-csv {
+        visibility: hidden;
+    }
+    .pagination {
+        display: block;
+    }
+}
+
+@media screen and(max-width: 480px) {
+    .user__section {
+        visibility: collapse;
+    }}

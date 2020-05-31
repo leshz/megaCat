@@ -1,37 +1,15 @@
-$base-color: #fc9658;
-$combination-color: #fadd8d;
-
 .dashboard {
     margin: 0;
     font-weight: bold;
     text-align: center;
 }
 
-.exam__id{
-    background-color: $base-color
-}
-
-.exam__date {
-    background-color: $combination-color;
-}
-.exam__name {
-        background-color: $base-color;
-}
-
 .exam__status {
-    background-color: $combination-color;
-}
-
-.exam__aviability {
-    background-color: $base-color;
-}
-
-.exam__download {
-    background-color: $combination-color;
-}
-
-.exam__view {
-    background-color: $base-color;
+    color: rgb(201, 201, 201);
+    background-color: rgb(86, 46, 139);
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center
 }
 
 .fas.fa-check-square {
