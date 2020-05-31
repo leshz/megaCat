@@ -11,7 +11,6 @@ router.post('/setToken', passport.authenticate('basic', { session: true }), addT
 function testNotification (req, res) {
   return Controller.sendMessageMulticast(req.body)
     .then(data => {
-      console.log('data', data)
       response.success(req, res, data, 200)
     })
     .catch((err) => {
@@ -20,7 +19,7 @@ function testNotification (req, res) {
 }
 
 function addTokentoUser (req, res) {
-  return Controller.setTokenToUser((req && req.user) || null, res.body)
+  return Controller.saveTokenToUser((req && req.user) || null, req.body)
     .then(data => {
       response.success(req, res, data, 200)
     })

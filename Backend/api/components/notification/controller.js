@@ -30,9 +30,9 @@ module.exports = (store) => {
         .catch((err) => reject(err))
     })
   }
-  function setTokenToUser (profile, token) {
+  function saveTokenToUser (profile, { token = null }) {
     return new Promise((resolve, reject) => {
-      if (profile === null) { reject(boom.internal) }
+      if (profile === null || token === null) { reject(boom.internal) }
       store.insert(TABLE, { userId: profile.id, token: token })
         .then(response => {
           if (response.id !== '') {
@@ -49,6 +49,6 @@ module.exports = (store) => {
 
   return {
     sendMessageMulticast,
-    setTokenToUser
+    saveTokenToUser
   }
 }
