@@ -4,10 +4,10 @@
   "description": "Sistema Gestor de Exámenes para Laboratorios Clínicos",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
-    "lint": "eslint src --fix",
-    "start": "webpack-dev-server --open --mode development"
+    "start": "webpack-dev-server --open --mode development",
+    "format": "prettier --write '{*.js,src/**/*.{js,jsx}}'",
+    "lint": "eslint src/ --fix"
   },
   "repository": {
     "type": "git",
@@ -55,5 +55,16 @@
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "npm run format",
+      "npm run lint"
+    ]
   }
 }
