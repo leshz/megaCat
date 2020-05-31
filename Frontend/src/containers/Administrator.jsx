@@ -1,13 +1,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import '../assets/styles/containers/_administrator.scss';
 import Header from '../components/Header';
 import User from './User';
 import UserItem from '../components/UserItem';
 import csvIcon from '../assets/static/csv-file.png';
-
-// import '../containers/Pagination'
 
 const Administrator = ({ users }) => {
   return (
@@ -70,10 +69,11 @@ const Administrator = ({ users }) => {
         </span>
 
         <div className='addUser'>
-          <p>Agregar nuevo usuario</p>
-          <a href='/' id='iconPlus'>
+
+          <Link to='/addUser' id='iconPlus'>
+            <p>Agregar nuevo usuario</p>
             <i className='fas fa-plus-circle' />
-          </a>
+          </Link>
         </div>
 
         <div className='cvsIcon__container'>
@@ -91,13 +91,6 @@ const Administrator = ({ users }) => {
             ))}
           </User>
         </div>
-
-        {/*
-        <div className='cardContainer'>
-          <i className='fas fa-eye' />
-          <i className='fas fa-edit' />
-          <i className='fas fa-times-circle' /> */}
-        {/* </div> */}
       </div>
     </div>
   );

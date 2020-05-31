@@ -15,25 +15,8 @@ const UserItem = (props) => {
     username,
     email,
     contactNumber,
-    address,
-    medicalRecord,
-    isDeleted
+    address
   } = props;
-
-  const handleEditUser = (itemId) => {
-    props.editUser({
-      id,
-      idNumber,
-      firstName,
-      lastName,
-      username,
-      email,
-      contactNumber,
-      address,
-      medicalRecord,
-      isDeleted,
-    });
-  };
 
   const handleDeleteUser = (itemId) => {
     props.deleteUser(itemId);
@@ -42,20 +25,19 @@ const UserItem = (props) => {
   return (
     <tr key={id}>
       <td>{idNumber}</td>
-      <td>{firstName}</td>
-      <td>{lastName}</td>
+      <td>
+        {firstName}
+        {lastName}
+      </td>
       <td>{username}</td>
       <td>{email}</td>
       <td>{contactNumber}</td>
       <td>{address}</td>
-      <td>{medicalRecord}</td>
-      <td>{isDeleted === true ? 'Inactivo' : 'Activo'}</td>
       <td>
         <img
           className='user-item__details--img'
           src={editIcon}
           alt='Edit user'
-          onClick={handleEditUser(id)}
         />
       </td>
       <td>
@@ -79,8 +61,6 @@ UserItem.propTypes = {
   email: PropTypes.string,
   contactNumber: PropTypes.string,
   address: PropTypes.string,
-  medicalRecord: PropTypes.string,
-  isDeleted: PropTypes.bool,
 };
 
 const mapDispatchToProps = {

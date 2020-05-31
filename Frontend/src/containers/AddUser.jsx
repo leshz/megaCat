@@ -1,12 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
+import { addUser } from '../actions/index';
+
 import Header from '../components/Header';
 import '../assets/styles/containers/AddUser.scss';
 
-const AddUser = () => {
+const AddUser = (props) => {
+
+  const [form, setForm] = useState({
+    rolName: '',
+    idNumber: '',
+    firstName: '',
+    lastName: '',
+    contactNumber: '',
+    address: '',
+    email: '',
+  });
+
   const handleInput = (event) => {
-    setValues({
+    setForm({
       ...form,
       [event.target.name]: event.target.value,
     });
@@ -14,23 +27,14 @@ const AddUser = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.loginRequest(form);
+    console.log(form);
+    props.addUser(form);
     props.history.push('/administrator');
-    switch (form.email.toLowerCase()) {
-      case 'fertorresmx@gmail.com': {
-        props.history.push('/administrator');
-        break;
-      }
-
-      case 'PATIENT': {
-        props.history.push('/patient');
-        break;
-      }
-
-      default:
-        props.history.push('/patient');
-    }
   };
+
+  const handleChange = (event) => {
+    setForm({ rolName: event.target.value });
+  }
 
   return (
     <section className='Container'>
@@ -43,7 +47,7 @@ const AddUser = () => {
                 Seleccionar rol del usuario
                 {' '}
                 {/* Traer estos valores de la BD */}
-                <select name='rolName' onChange={handleInput}>
+                <select name='rolName' onChange={handleChange}>
                   <option value='idRolPaciente'>Paciente</option>
                   <option value='idRolMedico'>Médico</option>
                   <option value='idRolBacteriologo'>Bacteriólogo</option>
@@ -89,14 +93,14 @@ const AddUser = () => {
               onChange={handleInput}
             />
             <input
-              name='Domicilio'
+              name='address'
               className='input'
               type='text'
               placeholder='address'
               onChange={handleInput}
             />
 
-            <button className='button--send' type='submit'>
+            <button className='addUser__container__button' type='button' onClick={handleSubmit}>
               Crear Usuario
             </button>
             <Link to='/administrator'>
@@ -110,5 +114,8 @@ const AddUser = () => {
     </section>
   );
 };
+const mapDispatchToProps = {
+  addUser,
+};
 
-export default AddUser;
+export default connect(null, mapDispatchToProps)(AddUser);
