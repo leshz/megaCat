@@ -1,7 +1,7 @@
-const testServer = require('../../utils/testServer')
+const testServer = require('../utils/testServer')
 
 describe('API | Components | Welcome', () => {
-  const route = require('../components/welcome/network')
+  const route = require('../api/components/welcome/network')
   const request = testServer(route)
   const message = '🔬 Welcome to Exam Management System for Clinical Laboratories API'
   describe('Network', () => {
