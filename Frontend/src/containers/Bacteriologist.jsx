@@ -26,7 +26,6 @@ class Bacteriologist extends React.Component {
 
       return (
         <>
-        <Header/>
         <section className="Container">
           <div className="Patient--search">
             <input 

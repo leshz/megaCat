@@ -1,11 +1,12 @@
 .Shedule__exam--list {
   margin-top: 2.5em;
-  display: grid;
-  grid-template-columns: repeat(3, 30%);
-  justify-content: space-between;
- .Shedule__exam--cards{
+  .Shedule__exam--cards{
     padding: 0;
     margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    justify-content: space-between;
+    grid-gap: 20px 0;
   }
   .Shedule__exam--item {
     padding: 1em;

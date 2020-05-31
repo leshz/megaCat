@@ -1,75 +1,64 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Header from '../components/Header';
-import usersMock from '../mocks/UsersMock.json';
+import { connect } from 'react-redux';
+import PatientList from '../components/PatientList';
 import '../assets/styles/containers/PatientList.scss';
 
-class Doctor extends React.Component {
-  state = {
-    search: '',
-  };
+const Doctor = ({ users }) => {
+  // state = {
+  //   search: '',
+  // };
 
-  onChange = (e) => {
-    this.setState({ search: e.target.value });
-  };
+  // onChange = (e) => {
+  //   this.setState({ search: e.target.value });
+  // };
+  // const { search } = this.state;
 
-  render() {
-    const { search } = this.state;
+  // const filteredUsers = usersMock.filter((item) => {
+  //   return (
+  //     `${item.id_number} ${item.first_name} ${item.last_name}`
+  //       .toLowerCase()
+  //       .indexOf(search.toLowerCase()) !== -1
+  //   );
+  // });
 
-    const filteredUsers = usersMock.filter((item) => {
-      return (
-        `${item.id_number} ${item.first_name} ${item.last_name}`
-          .toLowerCase()
-          .indexOf(search.toLowerCase()) !== -1
-      );
-    });
-
-
-    return (
-      <>
-        <Header />
-        <section className="Container">
-          <div className="Name--template">
-            <h1>Listado de Pacientes</h1>
+  return (
+    <>
+      <section className="Container">
+        <div className="Name--template">
+          <h1>Listado de Pacientes</h1>
+        </div>
+        <div className="Patient--search">
+          <input
+            type="text"
+            placeholder="Buscar"
+            // onChange={handleChange}
+            // onChange={this.onChange}
+          />
+          <span>
+            <i className="fas fa-search"></i>
+          </span>
+        </div>
+        <section className="Patient__list">
+          <div className="Patient__list--options">
+            <h3>No. Identificación</h3>
+            <h3>Nombres y Apellidos</h3>
+            <h3>Ver registro de paciente</h3>
           </div>
-          <div className="Patient--search">
-            <input type="text" placeholder="Buscar" onChange={this.onChange} />
-            <span>
-              <i className="fas fa-search"></i>
-            </span>
-          </div>
-          <section className="Patient__list">
-            <div className="Patient__list--options">
-              <h3>No. Identificación</h3>
-              <h3>Nombres y Apellidos</h3>
-              <h3>Ver registro de paciente</h3>
-            </div>
-            <ul className="Patient__list--cards">
-              {filteredUsers.map((item) => {
-                return (
-                  <li key={item.id} className="Patient__card">
-                    <p>{item.id_number}</p>
-                    <p>
-                      {item.first_name} {item.last_name}
-                    </p>
-                    <Link
-                      to={`/personalInfo`}
-                      className="Patient__watch--icon"
-                      title="Ver Registro"
-                    >
-                      <span>
-                        <i className="fas fa-eye"></i>
-                      </span>
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </section>
+          <ul className="Patient__list--cards">
+            {users.map((item) => {
+              return <PatientList key={item.id} {...item} />;
+            })}
+          </ul>
         </section>
-      </>
-    );
-  }
-}
+      </section>
+    </>
+  );
+};
 
-export default Doctor;
+const mapStateToProps = (state) => {
+  return {
+    users: state.users,
+  };
+};
+
+export default connect(mapStateToProps, null)(Doctor);

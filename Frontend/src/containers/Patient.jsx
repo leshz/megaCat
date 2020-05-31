@@ -1,11 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { connect } from 'react-redux';
-
-import '../assets/styles/containers/Administrator.scss';
 import Header from '../components/Header';
 import Exam from './Exam';
 import ExamItem from '../components/ExamItem';
+import '../assets/styles/containers/Administrator.scss';
 
 // import '../containers/Pagination'
 

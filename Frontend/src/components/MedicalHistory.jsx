@@ -1,12 +1,13 @@
 import React from 'react';
 import '../assets/styles/components/PatientData.scss';
 
-const MedicalHistory = () => {
+const MedicalHistory = (props) => {
+
   return (
     <div className="Container">
       <div className="Patient__medical_history">
         <h3>Fecha de Nacimiento:</h3>
-        <p></p>
+        <p>{}</p>
         <h3>Género:</h3>
         <p></p>
         <h3>Tipo de sangre:</h3>

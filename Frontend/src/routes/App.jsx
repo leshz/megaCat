@@ -26,14 +26,21 @@ export default class App extends React.Component {
             <Route exact path="/bacteriologist" component={Bacteriologist} />
             <Route exact path="/addExamResults" component={AddExamsResults} />
             <Route exact path="/doctor" component={Doctor} />
-            <Route path="/(personalInfo|medicalHistory|sheduleExams)/" component={PatientInfo}/>
+            <Route
+              path="/(personalInfo|medicalHistory|sheduleExams)/"
+              component={PatientInfo}
+            />
             <Route exact path="/personalInfo" component={PersonalInfo} />
-            <Route exact path="/medicalHistory" component={MedicalHistory}/>
+            <Route
+              exact
+              path="/medicalHistory"
+              component={MedicalHistory}
+            />
             <Route exact path="/sheduleExams" component={SheduleExams} />
             <Route exact path="/administrator" component={Administrator} />
             <Route exact path="/patient" component={Patient} />
           </Layout>
-            <Route component={NotFound} />
+          <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
     );

@@ -87,7 +87,7 @@ const Login = (props) => {
           <Link to='/remember'>¿Has olvidado tu Usuario/Contraseña?</Link>
         </form>
         <div className="Login__container--info">
-          <Link to="/administrator">
+          <Link to="/">
             <span>
               <i className="fas fa-comment-alt" />
             </span>
