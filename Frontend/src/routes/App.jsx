@@ -9,6 +9,7 @@ import Patient from '../containers/Patient';
 import NotFound from '../containers/NotFound';
 
 import '../assets/styles/App.scss';
+import AddUser from '../containers/AddUser';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route exact path='/bacteriologist' component={Bacteriologist} />
         <Route exact path='/administrator' component={Administrator} />
         <Route exact path='/patient' component={Patient} />
+        <Route exact path='/addUser' component={AddUser} />
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
