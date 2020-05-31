@@ -9,6 +9,7 @@ const remove = jest.fn((table, id) => Promise.resolve(true))
 const query = jest.fn((table, query, join = null) => {
   return dummy.query(table, query)
 })
+const model = jest.fn((table) => table)
 
 module.exports = {
   get,
@@ -16,5 +17,6 @@ module.exports = {
   insert,
   update,
   remove,
-  query
+  query,
+  model
 }

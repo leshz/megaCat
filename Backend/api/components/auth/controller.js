@@ -13,7 +13,16 @@ const saltRounds = 10
 module.exports = (store) => {
   async function get (q) {
     if (!q) throw boom.badData()
-    const user = await store.query(TABLE, q)
+    const user = await store.query(TABLE, q, null, [
+      {
+        as: 'roles',
+        model: store.model('role'),
+        attributes: ['id', 'name'],
+        through: {
+          attributes: []
+        }
+      }
+    ])
 
     return user[0]
   }
@@ -75,11 +84,12 @@ module.exports = (store) => {
       if (!User) {
         throw boom.unauthorized()
       }
+
       const user = {
         id: User.id,
         idNumber: User.idNumber,
         username: User.username,
-        role: 'ToDo'
+        roles: User.roles
       }
 
       const token = await auth.sign({ ...user })
