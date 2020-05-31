@@ -38,7 +38,7 @@ const Patient = ({ exams }) => {
           Descargar todos los seleccionados
         </button>
 
-        <div className='exam_section'>
+        <div className='exam-container'>
           <Exam>
             {exams.map((item) => (
               <ExamItem key={item.id} {...item} />
