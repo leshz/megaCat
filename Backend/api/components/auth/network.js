@@ -2,6 +2,8 @@ const express = require('express')
 const response = require('../../../network/response')
 const Controller = require('./index')
 const passport = require('passport')
+const roleValidationHandler = require('../../../auth/roles')
+const { rolesNameEnum } = require('../../../store/mocks/RolesMock')
 const router = express.Router()
 
 // Passport Strategies
@@ -13,6 +15,7 @@ router.post('/login', passport.authenticate('basic', { session: false }), login)
 router.get(
   '/add_user',
   passport.authenticate(['jwt', 'cookie'], { session: false }),
+  roleValidationHandler([rolesNameEnum.ADMINISTRATOR]),
   addUser
 )
 
