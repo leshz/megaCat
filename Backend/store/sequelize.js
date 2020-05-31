@@ -5,6 +5,8 @@ const DEFAULTS = {
   ITEMS_PER_PAGE: 5,
   CURRENT_PAGE: 1
 }
+const toJSON = (data) => JSON
+  .parse(JSON.stringify(data))
 
 const pagination = (count, rows, itemsPerPage, currentPage) => ({
   total: count,
@@ -23,11 +25,13 @@ async function list (table, paginationConfig) {
     config.limit = paginationConfig.itemsPerPage || DEFAULTS.ITEMS_PER_PAGE
     config.offset = currentPage <= 1 ? 0 : (currentPage - 1) * config.limit
 
-    return store[model].findAndCountAll({
+    const results = await store[model].findAndCountAll({
       ...config,
       distinct: true,
       raw: true
     }).then(({ count, rows }) => pagination(count, rows, itemsPerPage, currentPage))
+
+    return toJSON(results)
   }
 
   return store[model].findAll({
@@ -69,17 +73,19 @@ async function query (table, where, paginationConfig = null, include = null) {
     config.limit = paginationConfig.itemsPerPage || DEFAULTS.ITEMS_PER_PAGE
     config.offset = currentPage <= 1 ? 0 : (currentPage - 1) * config.limit
 
-    return store[model].findAndCountAll({
+    const results = await store[model].findAndCountAll({
       ...config,
       distinct: true,
       raw: true
     }).then(({ count, rows }) => pagination(count, rows, itemsPerPage, currentPage))
+
+    return toJSON(results)
   }
 
-  return store[model].findAll({
-    ...config,
-    raw: true
+  const results = await store[model].findAll({
+    ...config
   })
+  return toJSON(results)
 }
 
 function model (model) {
