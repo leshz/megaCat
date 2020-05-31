@@ -31,7 +31,7 @@ describe('API | Components | Auth', () => {
           id: users[0].id,
           idNumber: users[0].idNumber,
           username: users[0].username,
-          role: 'ToDo'
+          roles: undefined
         }
 
         expect(result.user).toEqual(expected)
