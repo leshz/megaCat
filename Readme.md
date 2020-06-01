@@ -10,10 +10,10 @@
 
 # Take A Look
 
--[Login](https://www.figma.com/proto/3aPltYqUg94Up8V6r5nHFn/MegaCat?node-id=4%3A0&scaling=scale-down)
--[Patient](https://www.figma.com/proto/3aPltYqUg94Up8V6r5nHFn/MegaCat?node-id=25%3A2&scaling=scale-down)
--[Admin](https://www.figma.com/proto/3aPltYqUg94Up8V6r5nHFn/MegaCat?node-id=255%3A1&scaling=scale-down)
--[Bacteriologist](https://www.figma.com/proto/3aPltYqUg94Up8V6r5nHFn/MegaCat?node-id=388%3A37&scaling=scale-down)
+- [Login](https://www.figma.com/proto/3aPltYqUg94Up8V6r5nHFn/MegaCat?node-id=4%3A0&scaling=scale-down)
+- [Patient](https://www.figma.com/proto/3aPltYqUg94Up8V6r5nHFn/MegaCat?node-id=25%3A2&scaling=scale-down)
+- [Admin](https://www.figma.com/proto/3aPltYqUg94Up8V6r5nHFn/MegaCat?node-id=255%3A1&scaling=scale-down)
+- [Bacteriologist](https://www.figma.com/proto/3aPltYqUg94Up8V6r5nHFn/MegaCat?node-id=388%3A37&scaling=scale-down)
 
 
 We build two wonderfull projects: **Backend** and **Frontend**
@@ -146,7 +146,7 @@ Feel free to check [issues page](https://github.com/leshz/megaCat/issues). You c
 
 ## Documentation
 
-You can find the Nextep App documentation [Here](#)
+You can find the Nextep App documentation [On Notion](https://www.notion.so/MegaCat-Documentaci-n-26f9cb69824d4fd5bbb43898ca7e9ea6)
 
 
 ## Show your support
