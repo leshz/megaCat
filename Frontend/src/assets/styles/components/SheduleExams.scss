@@ -1,0 +1,41 @@
+.Shedule__exam--list {
+  margin-top: 2.5em;
+  .Shedule__exam--cards{
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    justify-content: space-between;
+    grid-gap: 20px 0;
+  }
+  .Shedule__exam--item {
+    padding: 1em;
+    list-style: none;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    h3 {
+      margin-top: 0;
+    }
+  }
+  .Shedule__add--button {
+    width: 60%;
+    margin: auto;
+    color: #fff;
+    background: #19243B;
+    padding: 0.8em;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    &:hover {
+      transform: scale(0.9);
+    }
+    > i {
+      margin-left: 10px;
+      font-size: 20px;
+    }
+  }
+}

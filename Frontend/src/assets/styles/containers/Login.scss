@@ -1,0 +1,64 @@
+@import '../App.scss';
+
+.Login {
+  @include home-themes;
+  height: 100vh;
+  .Logo {
+    margin: 0;
+    padding-top: 5%;
+  }
+  &__container--form {
+    .button--send {
+      @include home-button-send;
+    }
+    > a {
+      color: #fff;
+    }
+  }
+  &__container--form--options {
+    position: relative;
+    input {
+      width: 25%;
+      margin: 1em auto;
+      line-height: 1.2;
+      color: #333333;
+      display: block;
+      background: #fff;
+      border-radius: 2em;
+      padding: 1em;
+      border: none;
+      text-align: center;
+    }
+    > span {
+      font-size: 15px;
+      color: #999999;
+      display: flex;
+      align-items: center;
+      position: absolute;
+      bottom: 0;
+      left: 35%;
+      width: inherit;
+      height: 100%;
+      padding-left: 35px;
+      transition: all 0.4s;
+    }
+  }
+  &__container--info {
+    padding: 1em 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    a {
+      color: #fff;
+    }
+      span {
+      background: #3083c9;
+      padding: 1em;
+      border-radius: 50%;
+      > i {
+        font-size: 25px;
+        vertical-align: middle;
+      }
+    }
+  }
+}

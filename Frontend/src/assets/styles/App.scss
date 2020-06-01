@@ -1,0 +1,63 @@
+@import './Media.scss';
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+input:focus,
+button:focus {
+  outline: none !important;
+  box-shadow: none;
+}
+
+@mixin home-themes{
+  background-color: #19243b;
+  color: #fff;
+  text-align: center;
+}
+
+@mixin home-button-send{  
+    width: 20%;
+    margin: 2em auto;
+    padding: .7em;
+    display: block;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-radius: 2em;
+    transition: all 0.5s;
+    text-decoration: none;
+  &:hover {
+    transform: scale(0.9);
+  }
+}
+@mixin cardList {
+  margin: .5em 0;
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  justify-items: center;
+  align-items: center;
+  border: 1px solid #efefef;
+  border-radius: 15px;
+  transition: all .3s;
+  &:hover {
+    background: #f5f5f5;
+  }
+}
+
+@mixin cardIcon {
+  color: #19243B;
+  cursor: pointer;
+}
+
+.Container {
+  max-width: 85%;
+  margin: auto;
+}

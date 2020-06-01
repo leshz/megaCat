@@ -1,0 +1,86 @@
+$fuente-principal: 'Quicksand', sans-serif;
+$fuente-secundaria: Helvetica;
+$color-font:#FFB015;
+
+.mainContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 10% 15% 1fr;
+}
+
+.tittle__tipeuser {
+    display: grid;
+    // justify-self: center;
+    grid-column: 2/4;
+    margin: -60px auto auto auto;
+    width: 300px;
+    height: 75px;
+    h2 {
+        width: 350px;
+        color: $color-font;
+        font-family: $fuente-principal;
+        font-weight: 600;
+    }
+}
+
+.selectTypeUser {
+    grid-column: 1;
+}
+
+.selectrOderList {
+    grid-column: 2;
+    justify-content: center;
+    text-align: center;
+    display: block;
+}
+
+.selectrOderList select {
+    margin-left: 15px;
+}
+
+.searchIcon {
+    color: #999999;
+}
+
+.check-item {
+    grid-column: 1;
+    grid-row: 2;
+    margin: 15px
+}
+
+.pagination {
+    grid-column: 3;
+    margin: auto;
+}
+
+#button-download {
+    width: 280px;
+    height: 35px;
+    border-radius: 15px;
+    grid-column: 4;
+    margin: auto;
+    font-family: Helvetica;
+    font-weight: bold;
+}
+
+.fas.fa-file-pdf {
+    color: #c41212;
+    font-size: medium;
+    margin-right: 10px;
+}
+
+.exam-container {
+    display: grid;
+    grid-column: span 3;
+}
+
+.exam-container Exam {
+    text-align: center;
+    justify-content: center;
+}
+
+@media screen and(max-width: 736px) {
+    Exam {
+        visibility: collapse
+    }
+}
