@@ -112,7 +112,7 @@ npm run test
 👤 **Guiselle Mejía <guissmejia@gmail.com>**
 
 - Github: [@guissmejia](github.com/guissmejia)
-- LinkedIn: [@linke](https://www.linkedin.com/in/guiselle-mejía-561a61191/)
+- LinkedIn: [in/guiselle-mejía-561a61191](https://www.linkedin.com/in/guiselle-mejía-561a61191/)
 
 👤 **Yoshua Díaz**
 
@@ -120,23 +120,22 @@ npm run test
 - Github: [@yoshuadiaz](https://github.com/yoshuadiaz)
 - LinkedIn: [in/yoshuadiaz](https://www.linkedin.com/in/yoshua-diaz)
 
-👤 **one <example@example.com>**
+👤 **Omar Betanzos <example@example.com>**
 
-- Website: https://gitlab.com/leshz
-- Github: [@leshz]()
-- LinkedIn: [@linke imdd]()
+- Github: [@dashdancing](https://github.com/dashdancing)
+- LinkedIn: [in/omar.gbet](https://www.linkedin.com/in/omar.gbet)
 
 👤 **Jeffer Barragan <leshz@me.com>**
 
-- Website: https://gitlab.com/leshz
+- Website: [gitlab.com/leshz](https://gitlab.com/leshz)
 - Github: [@leshz](https://gitlab.com/leshz)
-- LinkedIn: [@linke](https://www.linkedin.com/in/jeffbarragan/)
+- LinkedIn: [in/jeffbarragan/](https://www.linkedin.com/in/jeffbarragan/)
 
-👤 **one <example@example.com>**
+👤**Fernando Torres <fertorresmx@gmail.com>**
 
-- Website: https://gitlab.com/leshz
-- Github: [@leshz]()
-- LinkedIn: [@linke imdd]()
+- Website: [fertorresmx.com](https://www.fertorresmx.com)
+- Github: [@FernandoTorresL](https://github.com/FernandoTorresL)
+- LinkedIn: [@fertorresmx](https://www.linkedin.com/in/fertorresmx/)
 
 ## 🤝 Contributing :)
 
