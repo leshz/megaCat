@@ -102,7 +102,7 @@ npm run test
 * Github: [@leshz](https://github.com/leshz)
 * LinkedIn: [@linke imdd](https://linkedin.com/in/linke imdd)
 
-## 🤝 Contributing
+## 🤝 Contributing :)
 
 Contributions, issues and feature requests are welcome!
 
