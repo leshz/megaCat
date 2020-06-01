@@ -1,42 +1,50 @@
-# WIP | MEGACAT LAB MANAGEMENT SYSTEM Backend
+# Welcome to Nextep Lab 👋
 
-This is the backend project for the Platzi Master Challenge.
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000)
+[![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://github.com/leshz/megaCat#readme)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/leshz/megaCat/graphs/commit-activity)
+
+> Nextep born to make easier and faster manage your clinical laboratory with a friendly way for your paciets.
+
+![Version](Documentos/images/login.png)
+
+We build two wonderfull projects: **Backend** and **Frontend**
+
+## **Backend APP**
 
 You can read the [API REST Docs here](https://documenter.getpostman.com/view/1023966/Szt8c97m?version=latest)
 
-## Installation
+### ✨ [API DEMO](https://megacat-backend.herokuapp.com)
 
-You need in this folder run:
-```bash
-  npm install
+### Install
+
+```sh
+npm install
 ```
 
-## Sequelize DB
-### Sequelize npm commands
+### Usage
 
-For run migrations you need excecute
+```sh
+npm run start:api
+```
 
-```bash
+### Run Tests
+
+```sh
+npm run test
+```
+
+### Build Model DB
+
+```sh
 npm run migration:run
 ```
 
-If you need make an undo one step at time, you need excecute:
-
-```bash
-npm run migration:undo
-```
-
-**DANGER**: If you need reverse all the changes in the DB, you need to run:
-
-```bash
-npm run migration:undo:all
-```
-
-### Sequelize usefull commands
+### Sequelize Usefull Commands
 
 If you want create a Sequelize model with a migration you need to run:
 
-```
+```sh
 npx sequelize model:generate --name <singular_name> --attributes <attributeName>:<type>,<otherAttributeName>:<type>
 
 Example:
@@ -46,33 +54,22 @@ npx sequelize model:generate user --attributes username:string,password:string
 
 For more information [read this docs](https://sequelize.org/master/manual/migrations.html)
 
-## Stack:
-* NodeJS
-* Express
-* Sequelize
-* MySQL
-* Jest
-* JWT
-* Passport
-* Standard
-* Hapi/Boom
+### Stack
 
+- NodeJS
+- Express
+- Sequelize
+- MySQL
+- Jest
+- JWT
+- Passport
+- Standard
+- Hapi/Boom
+- Firebase
 
---------------
+---
 
-
-
-
-
-# Welcome to Nextep Lab 👋
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000)
-[![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://github.com/leshz/megaCat#readme)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/leshz/megaCat/graphs/commit-activity)
-[![License: MIT](https://img.shields.io/github/license/leshz/Nextep Lab)](https://github.com/leshz/megaCat/blob/master/LICENSE)
-
-> Sistema Gestor de Exámenes para Laboratorios Clínicos
-
-### 🏠 [Homepage](https://github.com/leshz/megaCat#readme)
+## Frontend APP
 
 ### ✨ [Demo](https://nextep-lab.herokuapp.com)
 
@@ -94,13 +91,47 @@ npm run start
 npm run test
 ```
 
-## Author
+### Stack
+
+- ReactJs
+- Redux
+- Firebase
+- SCSS
+- Standard
+- Hapi/Boom
+
+## Authors
 
 👤 **Guiselle Mejía <guissmejia@gmail.com>**
 
-* Website: https://gitlab.com/leshz
-* Github: [@leshz](https://github.com/leshz)
-* LinkedIn: [@linke imdd](https://linkedin.com/in/linke imdd)
+- Website: https://gitlab.com/leshz
+- Github: [@leshz]()
+- LinkedIn: [@linke imdd]()
+
+👤 **one <example@example.com>**
+
+- Website: https://gitlab.com/leshz
+- Github: [@leshz]()
+- LinkedIn: [@linke imdd]()
+
+👤 **one <example@example.com>**
+
+- Website: https://gitlab.com/leshz
+- Github: [@leshz]()
+- LinkedIn: [@linke imdd]()
+
+👤 **Jeffer Barragan <example@example.com>**
+
+- Website: https://gitlab.com/leshz
+- Github: [@leshz](https://gitlab.com/leshz)
+- LinkedIn: [@linke imdd](https://www.linkedin.com/in/jeffbarragan/)
+- Role: _DevOps Backend Developer_
+
+👤 **one <example@example.com>**
+
+- Website: https://gitlab.com/leshz
+- Github: [@leshz]()
+- LinkedIn: [@linke imdd]()
 
 ## 🤝 Contributing :)
 
@@ -112,12 +143,8 @@ Feel free to check [issues page](https://github.com/leshz/megaCat/issues). You c
 
 Give a ⭐️ if this project helped you!
 
-
 ## 📝 License
 
 Copyright © 2020 [Guiselle Mejía <guissmejia@gmail.com>](https://github.com/leshz).
 
 This project is [MIT](https://github.com/leshz/megaCat/blob/master/LICENSE) licensed.
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_

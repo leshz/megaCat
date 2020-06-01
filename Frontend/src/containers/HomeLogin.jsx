@@ -12,8 +12,8 @@ import "../assets/styles/containers/Login.scss";
 const Login = (props) => {
 
   const [form, setValues] = useState({
-    username: "leodora.crouch.1716",
-    password: "MtxYGBkMbGEisyCV"
+    username: "",
+    password: ""
   });
 
   const handleInput = (event) => {
