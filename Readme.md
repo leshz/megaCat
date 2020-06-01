@@ -8,6 +8,14 @@
 
 ![Version](Documentos/images/login.png)
 
+# Take A Look
+
+-[Login](https://www.figma.com/proto/3aPltYqUg94Up8V6r5nHFn/MegaCat?node-id=4%3A0&scaling=scale-down)
+-[Patient](https://www.figma.com/proto/3aPltYqUg94Up8V6r5nHFn/MegaCat?node-id=25%3A2&scaling=scale-down)
+-[Admin](https://www.figma.com/proto/3aPltYqUg94Up8V6r5nHFn/MegaCat?node-id=255%3A1&scaling=scale-down)
+-[Bacteriologist](https://www.figma.com/proto/3aPltYqUg94Up8V6r5nHFn/MegaCat?node-id=388%3A37&scaling=scale-down)
+
+
 We build two wonderfull projects: **Backend** and **Frontend**
 
 ## **Backend APP**
@@ -135,6 +143,11 @@ npm run test
 Contributions, issues and feature requests are welcome!
 
 Feel free to check [issues page](https://github.com/leshz/megaCat/issues). You can also take a look at the [contributing guide](https://github.com/leshz/megaCat/blob/master/CONTRIBUTING.md).
+
+## Documentation
+
+You can find the Nextep App documentation [Here](#)
+
 
 ## Show your support
 
