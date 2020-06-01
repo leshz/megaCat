@@ -98,7 +98,6 @@ npm run test
 - Firebase
 - SCSS
 - Standard
-- Hapi/Boom
 
 ## Authors
 
