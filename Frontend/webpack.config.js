@@ -1,16 +1,17 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin')
+const path = require("path")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const ServiceWorkerWebpackPlugin = require("serviceworker-webpack-plugin")
+const Dotenv = require("dotenv-webpack")
 
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js",
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: [".js", ".jsx"],
   },
   module: {
     rules: [
@@ -18,14 +19,14 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
         },
       },
       {
         test: /\.html$/,
         use: [
           {
-            loader: 'html-loader',
+            loader: "html-loader",
           },
         ],
       },
@@ -35,17 +36,17 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
           },
-          'css-loader',
-          'sass-loader',
+          "css-loader",
+          "sass-loader",
         ],
       },
       {
         test: /\.(png|gif|jpg|jpeg)$/,
         use: [
           {
-            loader: 'file-loader',
+            loader: "file-loader",
             options: {
-              name: 'assets/[hash].[ext]',
+              name: "assets/[hash].[ext]",
             },
           },
         ],
@@ -54,19 +55,20 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    open: 'Google Chrome'
+    open: "Google Chrome"
   },
   plugins: [
+    new Dotenv(),
     new HtmlWebpackPlugin({
-      template: './public/index.html',
-      filename: './index.html',
+      template: "./public/index.html",
+      filename: "./index.html",
     }),
     new MiniCssExtractPlugin({
-      filename: 'assets/[name].css'
+      filename: "assets/[name].css"
     }),
     new ServiceWorkerWebpackPlugin({
-      entry: path.join(__dirname, './src/sw/firebase-messaging-sw.js'),
-      filename: 'firebase-messaging-sw.js'
-    }),
+      entry: path.join(__dirname, "./src/sw/firebase-messaging-sw.js"),
+      filename: "firebase-messaging-sw.js"
+    })
   ],
 }
