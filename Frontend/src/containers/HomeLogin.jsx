@@ -26,7 +26,7 @@ const Login = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    axios.post("http://localhost:3000/api/auth/login", {}, {
+    axios.post("https://megacat-backend.herokuapp.com/api/auth/login", {}, {
 
       auth: {
         username: form.username,

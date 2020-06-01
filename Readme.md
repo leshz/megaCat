@@ -103,9 +103,14 @@ npm run test
 
 👤 **Guiselle Mejía <guissmejia@gmail.com>**
 
-- Website: https://gitlab.com/leshz
-- Github: [@leshz]()
-- LinkedIn: [@linke imdd]()
+- Github: [@guissmejia](github.com/guissmejia)
+- LinkedIn: [@linke](https://www.linkedin.com/in/guiselle-mejía-561a61191/)
+
+👤 **Yoshua Díaz**
+
+- Website: [yoshuadiaz.com](https://yoshuadiaz.com)
+- Github: [@yoshuadiaz](https://github.com/yoshuadiaz)
+- LinkedIn: [in/yoshuadiaz](https://www.linkedin.com/in/yoshua-diaz)
 
 👤 **one <example@example.com>**
 
@@ -113,18 +118,11 @@ npm run test
 - Github: [@leshz]()
 - LinkedIn: [@linke imdd]()
 
-👤 **one <example@example.com>**
-
-- Website: https://gitlab.com/leshz
-- Github: [@leshz]()
-- LinkedIn: [@linke imdd]()
-
-👤 **Jeffer Barragan <example@example.com>**
+👤 **Jeffer Barragan <leshz@me.com>**
 
 - Website: https://gitlab.com/leshz
 - Github: [@leshz](https://gitlab.com/leshz)
-- LinkedIn: [@linke imdd](https://www.linkedin.com/in/jeffbarragan/)
-- Role: _DevOps Backend Developer_
+- LinkedIn: [@linke](https://www.linkedin.com/in/jeffbarragan/)
 
 👤 **one <example@example.com>**
 
