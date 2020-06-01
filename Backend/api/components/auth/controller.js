@@ -64,7 +64,7 @@ module.exports = (store) => {
       await authRolesCtrl.insert(user.id, roleId)
 
       await store.insert(TABLE, { ...authData, id: user.id })
-      // ToDo: Add role
+
       const emailInfo = {
         ...JSON.parse(JSON.stringify(user)),
         password: password
@@ -76,7 +76,6 @@ module.exports = (store) => {
       throw boom.badRequest()
     }
   }
-  // ToDo: Add Role data
   async function login (User) {
     try {
       if (!User) {
