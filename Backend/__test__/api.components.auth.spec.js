@@ -5,7 +5,8 @@ const userCtrl = require('../api/components/user/index')
 const emailCtrl = require('../api/components/email/index')
 const authRolesCtrl = require('../api/components/auth_roles/index')
 jest.mock('../api/components/user/index.js', () => ({
-  insert: jest.fn((user) => ({ ...user, id: '1234567890' }))
+  insert: jest.fn((user) => ({ ...user, id: '1234567890' })),
+  get: jest.fn((id) => ({ id }))
 }))
 
 jest.mock('../api/components/email/index.js', () => ({

@@ -9,7 +9,12 @@ module.exports = (store) => {
     return userSaved
   }
 
+  async function get (id) {
+    return store.get(TABLE, id)
+  }
+
   return {
-    insert
+    insert,
+    get
   }
 }

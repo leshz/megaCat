@@ -91,9 +91,10 @@ module.exports = (store) => {
 
       const token = await auth.sign({ ...user })
 
+      const userData = await userCtrl.get(User.id)
       return {
         token,
-        user
+        user: { ...user, ...userData }
       }
     } catch (error) {
       throw boom.unauthorized()
