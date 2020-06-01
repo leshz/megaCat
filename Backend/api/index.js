@@ -14,7 +14,17 @@ const notification = require('./components/notification/network')
 
 const app = express()
 
-app.use(cors({ credentials: true, origin: 'http://localhost:8080' }))
+const whitelist = ['http://localhost:8080', 'https://nextep-lab.herokuapp.com']
+app.use(cors({
+  credentials: true,
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}))
 app.use(bodyParser.json())
 app.use(cookieParser())
 app.use(passport.initialize())
