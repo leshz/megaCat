@@ -14,6 +14,7 @@
 - [Patient](https://www.figma.com/proto/3aPltYqUg94Up8V6r5nHFn/MegaCat?node-id=25%3A2&scaling=scale-down)
 - [Admin](https://www.figma.com/proto/3aPltYqUg94Up8V6r5nHFn/MegaCat?node-id=255%3A1&scaling=scale-down)
 - [Bacteriologist](https://www.figma.com/proto/3aPltYqUg94Up8V6r5nHFn/MegaCat?node-id=388%3A37&scaling=scale-down)
+- [Doctor](https://www.figma.com/proto/3aPltYqUg94Up8V6r5nHFn/MegaCat?node-id=37%3A99&scaling=scale-down)
 
 We build two wonderful projects: **Backend** and **Frontend**
 
