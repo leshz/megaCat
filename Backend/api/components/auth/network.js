@@ -12,7 +12,7 @@ require('../../../auth/strategies/cookie')
 require('../../../auth/strategies/jwt')
 
 router.post('/login', passport.authenticate('basic', { session: false }), login)
-router.get(
+router.post(
   '/add_user',
   passport.authenticate(['jwt', 'cookie'], { session: false }),
   roleValidationHandler([rolesNameEnum.ADMINISTRATOR]),

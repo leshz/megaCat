@@ -17,7 +17,8 @@ const pagination = (count, rows, itemsPerPage, currentPage) => ({
 })
 async function list (table, paginationConfig) {
   const model = pluralize.singular(table)
-  const config = {}
+  const defaultWhere = { isDeleted: false }
+  const config = { where: { ...defaultWhere } }
 
   if (paginationConfig) {
     const itemsPerPage = paginationConfig.itemsPerPage || DEFAULTS.ITEMS_PER_PAGE
@@ -35,7 +36,8 @@ async function list (table, paginationConfig) {
   }
 
   return store[model].findAll({
-    ...config
+    ...config,
+    where: { isDeleted: false }
   })
 }
 async function get (table, id) {
@@ -52,15 +54,15 @@ async function update (table, id, data) {
 }
 async function remove (table, id) {
   const model = pluralize.singular(table)
-  const instance = await store[model].findByPk(id)
-  await instance.destroy()
+  await store[model].update({ isDeleted: true }, { where: { id } })
   return true
 }
 async function query (table, where, paginationConfig = null, include = null) {
   const model = pluralize.singular(table)
-  const config = {}
+  const defaultWhere = { isDeleted: false }
+  const config = { where: { ...defaultWhere } }
   if (where) {
-    config.where = where
+    config.where = { ...config.where, ...where }
   }
 
   if (include) {
