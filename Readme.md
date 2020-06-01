@@ -107,11 +107,11 @@ npm run test
 - Github: [@leshz]()
 - LinkedIn: [@linke imdd]()
 
-👤 **one <example@example.com>**
+👤 **Yoshua Díaz**
 
-- Website: https://gitlab.com/leshz
-- Github: [@leshz]()
-- LinkedIn: [@linke imdd]()
+- Website: [yoshuadiaz.com](https://yoshuadiaz.com)
+- Github: [@yoshuadiaz](https://github.com/yoshuadiaz)
+- LinkedIn: [in/yoshuadiaz](https://www.linkedin.com/in/yoshua-diaz)
 
 👤 **one <example@example.com>**
 
