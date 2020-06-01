@@ -4,11 +4,19 @@
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://github.com/leshz/megaCat#readme)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/leshz/megaCat/graphs/commit-activity)
 
-> Nextep born to make easier and faster manage your clinical laboratory with a friendly way for your paciets.
+> Nextep born to make easier and faster manage your clinical laboratory with a friendly way for your patients.
 
 ![Version](Documentos/images/login.png)
 
-We build two wonderfull projects: **Backend** and **Frontend**
+# Take A Look
+
+- [Login](https://www.figma.com/proto/3aPltYqUg94Up8V6r5nHFn/MegaCat?node-id=4%3A0&scaling=scale-down)
+- [Patient](https://www.figma.com/proto/3aPltYqUg94Up8V6r5nHFn/MegaCat?node-id=25%3A2&scaling=scale-down)
+- [Admin](https://www.figma.com/proto/3aPltYqUg94Up8V6r5nHFn/MegaCat?node-id=255%3A1&scaling=scale-down)
+- [Bacteriologist](https://www.figma.com/proto/3aPltYqUg94Up8V6r5nHFn/MegaCat?node-id=388%3A37&scaling=scale-down)
+- [Doctor](https://www.figma.com/proto/3aPltYqUg94Up8V6r5nHFn/MegaCat?node-id=37%3A99&scaling=scale-down)
+
+We build two wonderful projects: **Backend** and **Frontend**
 
 ## **Backend APP**
 
@@ -104,7 +112,7 @@ npm run test
 👤 **Guiselle Mejía <guissmejia@gmail.com>**
 
 - Github: [@guissmejia](github.com/guissmejia)
-- LinkedIn: [@linke](https://www.linkedin.com/in/guiselle-mejía-561a61191/)
+- LinkedIn: [in/guiselle-mejía-561a61191](https://www.linkedin.com/in/guiselle-mejía-561a61191/)
 
 👤 **Yoshua Díaz**
 
@@ -112,29 +120,33 @@ npm run test
 - Github: [@yoshuadiaz](https://github.com/yoshuadiaz)
 - LinkedIn: [in/yoshuadiaz](https://www.linkedin.com/in/yoshua-diaz)
 
-👤 **one <example@example.com>**
+👤 **Omar Betanzos <example@example.com>**
 
-- Website: https://gitlab.com/leshz
-- Github: [@leshz]()
-- LinkedIn: [@linke imdd]()
+- Github: [@dashdancing](https://github.com/dashdancing)
+- LinkedIn: [in/omar.gbet](https://www.linkedin.com/in/omar.gbet)
 
 👤 **Jeffer Barragan <leshz@me.com>**
 
-- Website: https://gitlab.com/leshz
+- Website: [gitlab.com/leshz](https://gitlab.com/leshz)
 - Github: [@leshz](https://gitlab.com/leshz)
-- LinkedIn: [@linke](https://www.linkedin.com/in/jeffbarragan/)
+- LinkedIn: [in/jeffbarragan/](https://www.linkedin.com/in/jeffbarragan/)
 
-👤 **one <example@example.com>**
+👤**Fernando Torres <fertorresmx@gmail.com>**
 
-- Website: https://gitlab.com/leshz
-- Github: [@leshz]()
-- LinkedIn: [@linke imdd]()
+- Website: [fertorresmx.com](https://www.fertorresmx.com)
+- Github: [@FernandoTorresL](https://github.com/FernandoTorresL)
+- LinkedIn: [@fertorresmx](https://www.linkedin.com/in/fertorresmx/)
 
 ## 🤝 Contributing :)
 
 Contributions, issues and feature requests are welcome!
 
 Feel free to check [issues page](https://github.com/leshz/megaCat/issues). You can also take a look at the [contributing guide](https://github.com/leshz/megaCat/blob/master/CONTRIBUTING.md).
+
+## Documentation
+
+You can find the Nextep App documentation [On Notion](https://www.notion.so/MegaCat-Documentaci-n-26f9cb69824d4fd5bbb43898ca7e9ea6)
+
 
 ## Show your support
 
