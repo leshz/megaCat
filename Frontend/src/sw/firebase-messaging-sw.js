@@ -1,5 +1,5 @@
-importScripts('https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js');
-importScripts('https://www.gstatic.com/firebasejs/6.2.0/firebase-messaging.js');
+importScripts("https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js");
+importScripts("https://www.gstatic.com/firebasejs/6.2.0/firebase-messaging.js");
 
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_CONFIG_API_KEY,
@@ -19,7 +19,7 @@ const messaging = firebase.messaging();
 
 messaging.setBackgroundMessageHandler((payload) => {
   console.log(
-    '[firebase-messaging-sw.js] Received background message ',
+    "[firebase-messaging-sw.js] Received background message ",
     payload
   );
   const { data } = payload;

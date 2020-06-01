@@ -2,25 +2,25 @@ const reducer = (state, action) => {
 
   switch (action.type) {
 
-    case 'ADD_USER':
+    case "ADD_USER":
       return {
         ...state,
         users: [...state.users, action.payload],
       };
 
-    case 'DELETE_USER':
+    case "DELETE_USER":
       return {
         ...state,
         users: state.users.filter((items) => items.id !== action.payload),
       };
 
-    case 'LOGIN_REQUEST':
+    case "LOGIN_REQUEST":
       return {
         ...state,
         user: action.payload,
       };
 
-    case 'LOGOUT_REQUEST':
+    case "LOGOUT_REQUEST":
       return {
         ...state,
         user: action.payload,

@@ -1,17 +1,17 @@
 /* eslint-disable react/button-has-type */
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { loginRequest } from '../actions';
-import messaging from '../conf/firebase';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { loginRequest } from "../actions";
+import messaging from "../conf/firebase";
 
-import logo from '../assets/static/logo.png';
-import '../assets/styles/containers/Login.scss';
+import logo from "../assets/static/logo.png";
+import "../assets/styles/containers/Login.scss";
 
 const Login = (props) => {
 
   const [form, setValues] = useState({
-    email: '',
+    email: "",
   });
 
   const handleInput = (event) => {
@@ -24,39 +24,43 @@ const Login = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     props.loginRequest(form);
-    props.history.push('/administrator');
+    props.history.push("/administrator");
     switch (form.email.toLowerCase()) {
-      case 'fertorresmx@gmail.com':
+      case "fertorresmx@gmail.com":
         {
-          props.history.push('/administrator');
+          props.history.push("/administrator");
           break;
         };
 
-      case 'PATIENT':
+      case "PATIENT":
         {
-          props.history.push('/patient');
+          props.history.push("/patient");
           break;
         };
 
       default:
-        props.history.push('/patient');
+        props.history.push("/patient");
     }
   };
-  messaging.requestPermission()
-    .then(() =>{
-      return messaging.getToken();
-    })
-    .then(e => {
-      console.log(e);
-    })
-    .catch(function (err) {
-      console.log('Unable to get permission to notify.', err);
-    });
-  navigator.serviceWorker.addEventListener('message', (message) => console.log(message));
+
+  if (messaging !== null) {
+    messaging.requestPermission()
+      .then(() =>{
+        return messaging.getToken();
+      })
+      .then(e => {
+        console.log(e);
+      })
+      .catch(function (err) {
+        console.log("Unable to get permission to notify.", err);
+      });
+  }
+
+  navigator.serviceWorker.addEventListener("message", (message) => console.log(message));
 
   return (
     <section className="Login">
-      <Link to='/'>
+      <Link to="/">
         <figure className="Logo">
           <img src={logo} alt="Logo de Nextep" />
         </figure>
@@ -96,7 +100,7 @@ const Login = (props) => {
           <Link to='/patient' className='button--send' type='submit'>
             Ingresar como paciente
           </Link> */}
-          <Link to='/remember'>¿Has olvidado tu Usuario/Contraseña?</Link>
+          <Link to="/remember">¿Has olvidado tu Usuario/Contraseña?</Link>
         </form>
         <div className="Login__container--info">
           <Link to="/">
@@ -104,7 +108,7 @@ const Login = (props) => {
               <i className="fas fa-comment-alt" />
             </span>
           </Link>
-          <Link to='/' className="button--send" type="submit">
+          <Link to="/" className="button--send" type="submit">
             Aviso de privacidad
           </Link>
         </div>
