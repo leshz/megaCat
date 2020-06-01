@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import axios from "axios"
 import { loginRequest } from "../actions";
 import messaging from "../conf/firebase";
 
@@ -11,7 +12,8 @@ import "../assets/styles/containers/Login.scss";
 const Login = (props) => {
 
   const [form, setValues] = useState({
-    email: "",
+    username: "",
+    password: ""
   });
 
   const handleInput = (event) => {
@@ -23,39 +25,31 @@ const Login = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.loginRequest(form);
-    props.history.push("/administrator");
-    switch (form.email.toLowerCase()) {
-      case "fertorresmx@gmail.com":
-        {
-          props.history.push("/administrator");
-          break;
-        };
 
-      case "PATIENT":
-        {
-          props.history.push("/patient");
-          break;
-        };
+    axios.post("http://localhost:3000/api/auth/login", {}, {
 
-      default:
-        props.history.push("/patient");
-    }
+      auth: {
+        username: form.username,
+        password: form.password
+      }
+    }).then(response => {
+      const roles = response.data.body.user.roles || [{ name: "None" }]
+      props.loginRequest({ ...response.data.body.user, token: response.data.body.token });
+      if (roles[0].name !== "None") {
+        props.history.push(`/${roles[0].name}`)
+      }
+    })
   };
-
-  if (messaging !== null) {
-    messaging.requestPermission()
-      .then(() =>{
-        return messaging.getToken();
-      })
-      .then(e => {
-        console.log(e);
-      })
-      .catch(function (err) {
-        console.log("Unable to get permission to notify.", err);
-      });
-  }
-
+  messaging.requestPermission()
+    .then(() =>{
+      return messaging.getToken();
+    })
+    .then(e => {
+      console.log(e);
+    })
+    .catch(function (err) {
+      console.log("Unable to get permission to notify.", err);
+    });
   navigator.serviceWorker.addEventListener("message", (message) => console.log(message));
 
   return (
@@ -71,10 +65,11 @@ const Login = (props) => {
         <form className="Login__container--form" onSubmit={handleSubmit}>
           <div className="Login__container--form--options">
             <input
-              name="email"
+              name="username"
               className="input"
               type="text"
               placeholder="Usuario"
+              value={form.username}
               onChange={handleInput}
             />
             <span>
@@ -87,6 +82,7 @@ const Login = (props) => {
               className="input"
               type="password"
               placeholder="Contraseña"
+              value={form.password}
               onChange={handleInput}
             />
             <span>

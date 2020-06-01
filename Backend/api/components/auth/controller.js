@@ -39,13 +39,11 @@ module.exports = (store) => {
       const hasUsername = await store.query(TABLE, { username })
 
       if (hasUsername.length > 0) {
-        const randomNumber = () => Math.ceil(Math.random() * 9)
-        let newUsername = `${username.slice(0, -2)}${randomNumber()}${randomNumber()}`
-        if (username === newUsername) {
-          newUsername = `${username.slice(0, -2)}${randomNumber()}${randomNumber()}`
-        } else {
-          username = `${username.slice(0, -2)}${randomNumber()}${randomNumber()}`
-        }
+        const numberRange = Array.from({ length: 100 }, (_, idx) => idx < 10 ? `0${idx}` : `${idx}`)
+        const numberRangeFiltered = numberRange.filter(nr => nr !== username.slice(-2))
+        const index = Math.ceil(Math.random() * numberRangeFiltered.length)
+        const lastTwoRandomNumbers = numberRangeFiltered[index]
+        username = `${username.slice(0, -2)}${lastTwoRandomNumbers}`
       }
 
       const authData = {
@@ -66,7 +64,7 @@ module.exports = (store) => {
       await authRolesCtrl.insert(user.id, roleId)
 
       await store.insert(TABLE, { ...authData, id: user.id })
-      // ToDo: Add role
+
       const emailInfo = {
         ...JSON.parse(JSON.stringify(user)),
         password: password
@@ -78,7 +76,6 @@ module.exports = (store) => {
       throw boom.badRequest()
     }
   }
-  // ToDo: Add Role data
   async function login (User) {
     try {
       if (!User) {
@@ -94,9 +91,10 @@ module.exports = (store) => {
 
       const token = await auth.sign({ ...user })
 
+      const userData = await userCtrl.get(User.id)
       return {
         token,
-        user
+        user: { ...user, ...userData }
       }
     } catch (error) {
       throw boom.unauthorized()

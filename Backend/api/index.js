@@ -3,6 +3,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const passport = require('passport')
 const cookieParser = require('cookie-parser')
+const cors = require('cors')
 
 const config = require('../config/config')
 const errors = require('../network/errors')
@@ -13,6 +14,7 @@ const notification = require('./components/notification/network')
 
 const app = express()
 
+app.use(cors({ credentials: true, origin: 'http://localhost:8080' }))
 app.use(bodyParser.json())
 app.use(cookieParser())
 app.use(passport.initialize())
