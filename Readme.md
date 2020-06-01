@@ -4,7 +4,7 @@
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://github.com/leshz/megaCat#readme)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/leshz/megaCat/graphs/commit-activity)
 
-> Nextep born to make easier and faster manage your clinical laboratory with a friendly way for your paciets.
+> Nextep born to make easier and faster manage your clinical laboratory with a friendly way for your patients.
 
 ![Version](Documentos/images/login.png)
 
@@ -15,8 +15,7 @@
 - [Admin](https://www.figma.com/proto/3aPltYqUg94Up8V6r5nHFn/MegaCat?node-id=255%3A1&scaling=scale-down)
 - [Bacteriologist](https://www.figma.com/proto/3aPltYqUg94Up8V6r5nHFn/MegaCat?node-id=388%3A37&scaling=scale-down)
 
-
-We build two wonderfull projects: **Backend** and **Frontend**
+We build two wonderful projects: **Backend** and **Frontend**
 
 ## **Backend APP**
 
