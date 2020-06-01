@@ -1,17 +1,19 @@
 /* eslint-disable react/button-has-type */
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { loginRequest } from '../actions';
-import messaging from '../conf/firebase';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import axios from "axios"
+import { loginRequest } from "../actions";
+import messaging from "../conf/firebase";
 
-import logo from '../assets/static/logo.png';
-import '../assets/styles/containers/Login.scss';
+import logo from "../assets/static/logo.png";
+import "../assets/styles/containers/Login.scss";
 
 const Login = (props) => {
 
   const [form, setValues] = useState({
-    email: '',
+    username: "leodora.crouch.1716",
+    password: "MtxYGBkMbGEisyCV"
   });
 
   const handleInput = (event) => {
@@ -23,24 +25,20 @@ const Login = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.loginRequest(form);
-    props.history.push('/administrator');
-    switch (form.email.toLowerCase()) {
-      case 'fertorresmx@gmail.com':
-        {
-          props.history.push('/administrator');
-          break;
-        };
 
-      case 'PATIENT':
-        {
-          props.history.push('/patient');
-          break;
-        };
+    axios.post("http://localhost:3000/api/auth/login", {}, {
 
-      default:
-        props.history.push('/patient');
-    }
+      auth: {
+        username: form.username,
+        password: form.password
+      }
+    }).then(response => {
+      const roles = response.data.body.user.roles || [{ name: "None" }]
+      props.loginRequest({ ...response.data.body.user, token: response.data.body.token });
+      if (roles[0].name !== "None") {
+        props.history.push(`/${roles[0].name}`)
+      }
+    })
   };
   messaging.requestPermission()
     .then(() =>{
@@ -50,13 +48,13 @@ const Login = (props) => {
       console.log(e);
     })
     .catch(function (err) {
-      console.log('Unable to get permission to notify.', err);
+      console.log("Unable to get permission to notify.", err);
     });
-  navigator.serviceWorker.addEventListener('message', (message) => console.log(message));
+  navigator.serviceWorker.addEventListener("message", (message) => console.log(message));
 
   return (
     <section className="Login">
-      <Link to='/'>
+      <Link to="/">
         <figure className="Logo">
           <img src={logo} alt="Logo de Nextep" />
         </figure>
@@ -67,10 +65,11 @@ const Login = (props) => {
         <form className="Login__container--form" onSubmit={handleSubmit}>
           <div className="Login__container--form--options">
             <input
-              name="email"
+              name="username"
               className="input"
               type="text"
               placeholder="Usuario"
+              value={form.username}
               onChange={handleInput}
             />
             <span>
@@ -83,6 +82,7 @@ const Login = (props) => {
               className="input"
               type="password"
               placeholder="Contraseña"
+              value={form.password}
               onChange={handleInput}
             />
             <span>
@@ -96,7 +96,7 @@ const Login = (props) => {
           <Link to='/patient' className='button--send' type='submit'>
             Ingresar como paciente
           </Link> */}
-          <Link to='/remember'>¿Has olvidado tu Usuario/Contraseña?</Link>
+          <Link to="/remember">¿Has olvidado tu Usuario/Contraseña?</Link>
         </form>
         <div className="Login__container--info">
           <Link to="/">
@@ -104,7 +104,7 @@ const Login = (props) => {
               <i className="fas fa-comment-alt" />
             </span>
           </Link>
-          <Link to='/' className="button--send" type="submit">
+          <Link to="/" className="button--send" type="submit">
             Aviso de privacidad
           </Link>
         </div>
