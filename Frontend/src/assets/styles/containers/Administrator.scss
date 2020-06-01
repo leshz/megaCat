@@ -1,0 +1,142 @@
+$fuente-principal: 'Quicksand', sans-serif;
+$fuente-secundaria: Helvetica;
+
+.Container-Admin {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 10% 10% 10% 1fr;
+    background-color: #EFF1FF;
+}
+
+.searchBox{
+    display: flex;
+    grid-column: 1 / 4;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchbar{
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    padding-left: 20px;
+    width: 290px;
+    border: 1px solid #A1A1A1 ;
+}
+
+.searchBusqueda {
+    text-align: center;
+    width: 80%;
+    padding-left: 5%;
+    border: none;
+}
+
+.searchBusqueda {
+        font-size: 15px;
+        line-height: 1.2;
+        height: 35px;
+    }
+
+.selectTypeUser {
+    grid-column: 1;
+    justify-content: center;
+    text-align: center;
+    display: block;
+}
+
+.selectrOderList p {
+    grid-column: 2;
+    text-align: start;
+    display: block;
+}
+
+.selectrOderList select {
+    margin-left: 15px;
+}
+
+.searchIcon {
+    color: #999999;
+}
+
+.check-card p {
+    grid-column: 1;
+    text-align: start;
+    margin-left: 15px;
+}
+
+#checkbox1 {
+    margin-left: 25px;
+}
+
+.cvsIcon__container{
+    display: grid;
+    grid-column: 4;
+    grid-row: 2;
+    margin: auto;
+}
+
+.addUser {
+    display: grid;
+    grid-column: 3;
+    display: inline;
+    text-align: start;
+}
+
+.addUser p {
+    color: #00c2ff;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: start;
+    display: inline-block; 
+}
+
+.fas.fa-plus-circle {
+    font-size: 40px;
+    color: #00c2ff;
+    margin-left: 10px;
+}
+
+.pagination p {
+    text-align: start;
+}
+
+.tittle-SideBar {
+    margin-top: 15px;
+    text-align: center;
+    font-family: $fuente-secundaria;
+    font-weight: bold;
+}
+
+.csvIcon {
+    width: 70px;
+    margin: 0;
+}
+
+#button-csv {
+    width: 155px;
+    height: 35px;
+    border-radius: 15px;
+    grid-column: 4;
+    margin: 0 auto auto auto;
+}
+
+.user__section {    
+    grid-row: 4;
+    grid-column: span 4;
+}
+
+@media screen and(max-width: 736px) {
+    .user__section {
+        grid-column: span 2;
+    } 
+    #button-csv {
+        visibility: hidden;
+    }
+    .pagination {
+        display: block;
+    }
+}
+
+@media screen and(max-width: 480px) {
+    .user__section {
+        visibility: collapse;
+    }}
